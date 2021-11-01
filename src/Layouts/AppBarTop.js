@@ -65,8 +65,8 @@ function AppBarTop() {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuItem onClick={handleClose}>Profile</MenuItem>
-                            <MenuItem onClick={handleClose}>My account</MenuItem>
+                            
+                            <MenuItem onClick={handleClose}>Logout</MenuItem>
                         </Menu>
                     
                     {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
