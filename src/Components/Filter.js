@@ -1,8 +1,41 @@
 import { Autocomplete, Button, Chip, TextField } from '@mui/material'
 import SendIcon from '@mui/icons-material/Send'
-import React from 'react'
+import React, {useState} from 'react'
+
+
 
 function Filter() {
+
+    const [skills, setSkills] = useState([]);
+    const handleChange = (value) => {
+        if(value=='') console.log('empty');
+        setSkills(skills => [...skills, value]);
+        console.log(skills);
+    }
+    const handleInput = (e, value) => {
+        setSkills(value)
+        // console.log(value);
+        
+    };
+    // console.log(skills);
+
+    const handleSubmit = () => {
+        console.log("Inside submit");
+        // fetch(
+        //     url,
+        //     {
+        //         method: 'POST',
+        //         body: JSON.stringify(skills),
+        //     }
+        // )
+        // .then((response)=>response.json())
+        // .then((result)=>{
+        //     console.log('Success', result);
+        // })
+        // .catch((error) => {
+        //     console.log('Error', error);
+        // });
+    }
     return (
         <div>
             <Autocomplete
@@ -25,8 +58,10 @@ function Filter() {
                     />
                 )}
                 sx={{ m: 2 }}
+                // onChange = {e=>handleChange(e.target.value)}
+                onChange={handleInput}
             />
-            <Button variant="contained" endIcon={<SendIcon />} sx={{m:2}}>
+            <Button variant="contained" onClick={handleSubmit} endIcon={<SendIcon />} sx={{m:2}}>
                 Send
             </Button>
         </div>

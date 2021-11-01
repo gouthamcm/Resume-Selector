@@ -9,6 +9,10 @@ const Input = styled('input')({
 function UserUpload() {
     const [selectedFile, setSelectedFile] = useState();
 	const [isFilePicked, setIsFilePicked] = useState(false);
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phNumber, setPhNumber] = useState('');
 
 	const changeHandler = (event) => {
 		setSelectedFile(event.target.files[0]);
@@ -17,9 +21,26 @@ function UserUpload() {
 
     const handleSubmission = () => {
         const formData = new FormData();
+        formData.append('First Name', firstName);
+        formData.append('Last Name', lastName);
+        formData.append('Email', email);
+        formData.append('Phone Number', phNumber);
         formData.append('File', selectedFile);
-        console.log(selectedFile.name, selectedFile.size);
-        
+        console.log(formData);
+        // fetch(
+        //     url,
+        //     {
+        //         method: 'POST',
+        //         body: formData
+        //     }
+        // )
+        // .then((response)=>response.json())
+        // .then((result)=>{
+        //     console.log('Success', result);
+        // })
+        // .catch((error) => {
+        //     console.log('Error', error);
+        // });
     };
 
     return (
@@ -39,6 +60,7 @@ function UserUpload() {
                                     label="First name"
                                     fullWidth
                                     autoComplete="given-name"
+                                    onInput={e=>setFirstName(e.target.value)}
                                     variant="standard"
                                 />
                             </Grid>
@@ -50,6 +72,7 @@ function UserUpload() {
                                     label="Last name"
                                     fullWidth
                                     autoComplete="family-name"
+                                    onInput={e=>setLastName(e.target.value)}
                                     variant="standard"
                                 />
                             </Grid>
@@ -60,7 +83,7 @@ function UserUpload() {
                                     name="email"
                                     label="Email"
                                     fullWidth
-
+                                    onInput={e=> setEmail(e.target.value)}
                                     variant="standard"
                                 />
                             </Grid>
@@ -72,6 +95,7 @@ function UserUpload() {
                                     label="PhoneNumber"
                                     fullWidth
                                     autoComplete="tel"
+                                    onInput={e=> setPhNumber(e.target.value)}
                                     variant="standard"
                                 />
                             </Grid>
