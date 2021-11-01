@@ -9,6 +9,7 @@ function Feature() {
             <Logo />
             <ProfilePic />
             <Filter />
+            
         </div>
     )
 }
