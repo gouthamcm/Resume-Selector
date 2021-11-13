@@ -1,6 +1,6 @@
 import { Divider, Grid, Typography } from '@mui/material'
 
-import React from 'react';
+import React, {useState} from 'react';
 import AppBarTop from '../Layouts/AppBarTop';
 import Feature from '../Layouts/Feature';
 import ResumeList from '../Layouts/ResumeList';
@@ -16,14 +16,13 @@ const data = [
 
 
 function AdminView() {
+    const [isLoading, setIsLoading] = useState(true)
     return (
         <div>
             <Grid container spacing={3}>
                 <Grid item xs={3}>
 
                     <Feature />
-
-
 
                 </Grid>
 

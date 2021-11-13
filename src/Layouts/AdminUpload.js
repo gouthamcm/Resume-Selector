@@ -2,16 +2,18 @@ import { Grid, TextField, Box, Container, Paper, Typography, Button } from '@mui
 import Send from '@mui/icons-material/Send';
 import { styled } from '@mui/material/styles';
 import React, {useState} from 'react'
+import AppBarTop from './AppBarTop';
+import AppBarTopAdmin from './AppBarTopAdminUpload';
 const Input = styled('input')({
     display: 'none',
 });
 
-function UserUpload() {
+function AdminUpload() {
     const [selectedFile, setSelectedFile] = useState();
 	const [isFilePicked, setIsFilePicked] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
+    // const [email, setEmail] = useState('');
     const [phNumber, setPhNumber] = useState('');
 
 	const changeHandler = (event) => {
@@ -23,7 +25,7 @@ function UserUpload() {
         const formData = new FormData();
         formData.append('First Name', firstName);
         formData.append('Last Name', lastName);
-        formData.append('Email', email);
+        // formData.append('Email', email);
         formData.append('Phone Number', phNumber);
         formData.append('File', selectedFile);
         console.log(formData);
@@ -45,6 +47,7 @@ function UserUpload() {
 
     return (
         <div>
+            <AppBarTopAdmin />
             <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
                 <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
                     <Typography component="h1" variant="h4" align="center">
@@ -76,7 +79,7 @@ function UserUpload() {
                                     variant="standard"
                                 />
                             </Grid>
-                            <Grid item xs={12}>
+                            {/* <Grid item xs={12}>
                                 <TextField
                                     required
                                     id="email"
@@ -86,10 +89,10 @@ function UserUpload() {
                                     onInput={e=> setEmail(e.target.value)}
                                     variant="standard"
                                 />
-                            </Grid>
+                            </Grid> */}
                             <Grid item xs={12}>
                                 <TextField
-                                    required
+                                    
                                     id="phone"
                                     name="phone"
                                     label="PhoneNumber"
@@ -128,4 +131,4 @@ function UserUpload() {
     )
 }
 
-export default UserUpload
+export default AdminUpload

@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 
 import {Link, NavLink} from 'react-router-dom';
-function AppBarTop() {
+function AppBarTopUser() {
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
     // const 
@@ -65,7 +65,7 @@ function AppBarTop() {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuItem ><NavLink to ="/admin/upload" >Upload Resume</NavLink></MenuItem>
+                            {/* <MenuItem ><NavLink to ="/admin/upload" >Upload Resume</NavLink></MenuItem> */}
                             <MenuItem onClick={handleClose}>Logout</MenuItem>
                         </Menu>
                     
@@ -91,4 +91,4 @@ function AppBarTop() {
     )
 }
 
-export default AppBarTop
+export default AppBarTopUser

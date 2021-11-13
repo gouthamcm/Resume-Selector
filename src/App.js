@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Landing from './pages/Landing';
 import UserView from './pages/UserView';
 import PageNotFound from './pages/PageNotFound';
+import AdminUpload from './Layouts/AdminUpload';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/landing" component={Landing} />
           <Route path="/user" component={UserView} />
+          <Route path="/admin/upload" component={AdminUpload} />
           <Route path="*" component={PageNotFound} />
         </Switch>
       </Router>
