@@ -6,9 +6,10 @@ import React from 'react'
 function Logo() {
     return (
         <Box  sx={{ width: 40, height: 40, p:2, m:1}} >
-            <Icon>
+            {/* <Icon>
                 <MenuBook />
-            </Icon>
+            </Icon> */}
+            LOGO
         </Box>
     )
 }

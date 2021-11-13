@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import { boxSizing } from '@mui/system';
 import React from 'react'
-
+import { deepOrange, deepPurple } from '@mui/material/colors';
 
 const AccountStyle = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -20,7 +20,7 @@ function ProfilePic() {
                 <AccountStyle>
                     <Grid container spacing={2}>
                         <Grid item xs={3}>
-                            <Box component="img" src='' alt="Pic"/>
+                        <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
                         </Grid>
                         <Grid item xs={9}>
                             <Box sx={{ m: 1 }}>

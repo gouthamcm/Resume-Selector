@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material'
+import { Divider, Grid, Typography } from '@mui/material'
 
 import React from 'react';
 import AppBarTop from '../Layouts/AppBarTop';
@@ -6,15 +6,11 @@ import Feature from '../Layouts/Feature';
 import ResumeList from '../Layouts/ResumeList';
 
 const data = [
-    { Name: 'Goutham', Phno: '8901298', email: 'goutham.898@gmail.com', date: 'time' },
-    { Name: 'Goutham', Phno: '8901298', email: 'goutham.898@gmail.com', date: 'time' },
-    { Name: 'Goutham', Phno: '8901298', email: 'goutham.898@gmail.com', date: 'time' },
-    { Name: 'Goutham', Phno: '8901298', email: 'goutham.898@gmail.com', date: 'time' },
-    { Name: 'Goutham', Phno: '8901298', email: 'goutham.898@gmail.com', date: 'time' },
-    { Name: 'Goutham', Phno: '8901298', email: 'goutham.898@gmail.com', date: 'time' },
-    { Name: 'Goutham', Phno: '8901298', email: 'goutham.898@gmail.com', date: 'time' },
-    { Name: 'Goutham', Phno: '8901298', email: 'goutham.898@gmail.com', date: 'time' },
-    { Name: 'Goutham', Phno: '8901298', email: 'goutham.898@gmail.com', date: 'time' },
+    { Name: 'Sarthak', Phno: '8923918283', email: 'sarthak@gmail.com', date: 'time', skills: ['C++','SQL', 'Java'] },
+    { Name: 'Nitin', Phno: '982398901', email: 'nitin@gmail.com', date: 'time', skills: ['C++', 'Python', 'Javascript'] },
+    { Name: 'Abhishek', Phno: '7834289333', email: 'abhishek@gmail.com', date: 'time', skills: ['C++', 'django', 'python'] },
+    { Name: 'Ziyad', Phno: '8949289230', email: 'ziyad@gmail.com', date: 'time', skills: ['C++', 'Python', 'Java'] },
+    { Name: 'Goutham', Phno: '7839238943', email: 'gouthamgmail.com', date: 'time', skills: ['C++', 'Python', 'ML'] },
 ]
 
 
@@ -24,15 +20,25 @@ function AdminView() {
         <div>
             <Grid container spacing={3}>
                 <Grid item xs={3}>
+
                     <Feature />
+
+
+
                 </Grid>
-                <Grid item xs={9}>
+
+
+                <Divider orientation="vertical" flexItem>
+
+                </Divider>
+                <Grid item xs={8.9} >
                     <AppBarTop />
-                    <ResumeList resumeData = {data}/>
+
+                    <ResumeList resumeData={data} />
                 </Grid>
-                
+
             </Grid>
-            
+
         </div>
     )
 }

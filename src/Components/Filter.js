@@ -53,7 +53,7 @@ function Filter() {
                     <TextField
                         {...params}
                         variant="filled"
-                        label="freeSolo"
+                        label=""
                         placeholder="Skills"
                     />
                 )}
