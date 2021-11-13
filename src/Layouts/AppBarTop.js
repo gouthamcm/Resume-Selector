@@ -65,7 +65,7 @@ function AppBarTop() {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuItem ><NavLink to ="/admin/upload" >Upload Resume</NavLink></MenuItem>
+                            <MenuItem ><Link style={{textDecoration:'none', color: 'black'}} to ="/admin/upload" >Upload Resume</Link></MenuItem>
                             <MenuItem onClick={handleClose}>Logout</MenuItem>
                         </Menu>
                     

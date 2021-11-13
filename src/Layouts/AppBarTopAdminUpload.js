@@ -65,7 +65,7 @@ function AppBarTopAdminUpload() {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuItem ><NavLink to ="/" >View Resumes</NavLink></MenuItem>
+                            <MenuItem ><Link style={{textDecoration:'none', color: 'black'}} to ="/" >View Resumes</Link></MenuItem>
                             <MenuItem onClick={handleClose}>Logout</MenuItem>
                         </Menu>
                     
