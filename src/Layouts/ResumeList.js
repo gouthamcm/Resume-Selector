@@ -1,12 +1,20 @@
+import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import React from 'react'
+import React, { useState } from 'react'
 import ResumeCard from '../Components/ResumeCard'
+import EmptyContent from '../Components/EmptyContent'
 
 function ResumeList({resumeData, ...other}) {
+    const [isData, setIsData] = useState(resumeData.length==0 ? false:true)
+    
     return (
         <div>
             <Box sx={{m:2}}>
-                <ResumeCard resumeData={resumeData} />
+                {isData ?  
+                (<ResumeCard resumeData={resumeData} />):
+                (<EmptyContent />)
+                }
+                
             </Box>
         </div>
     )

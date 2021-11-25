@@ -8,7 +8,7 @@ function Feature() {
         <div>
             <Logo />
             <ProfilePic />
-            <Filter />
+            {/* <Filter /> */}
             
         </div>
     )
