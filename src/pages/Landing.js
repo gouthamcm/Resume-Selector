@@ -1,16 +1,13 @@
 import * as React from 'react';
-import { useState } from 'react';
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import SchoolIcon from '@mui/icons-material/School';
 import ComputerIcon from '@mui/icons-material/Computer';
 import Typography from '@mui/material/Typography';
@@ -18,35 +15,28 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Redirect, useHistory } from 'react-router';
 import Divider from '@mui/material/Divider';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const theme = createTheme();
 
 export default function Landing() {
-    // const [navigate, setNavigate] = React.useState(false);
+    const [navigate, setNavigate] = React.useState(false);
     // const [ref, setRef] = useState('');
     let history = useHistory();
 
     const handleAdmin = () => {
         // setNavigate(true);
         // setRef('/login'); 
-        history.push('/login');  
+        history.push('/signin');  
+        
     } 
     const handleApplicant=()=>{
+        // setNavigate(true);
         history.push('/user');
     }
   
+    // if(navigate){
+    //     return(<Redirect to='/user'/>)
+    // }
 
   return (
     <ThemeProvider theme={theme}>
@@ -115,7 +105,6 @@ export default function Landing() {
               >
                 Admin? Log in please
               </Button>
-              {/* {navigate?<Redirect to={ref}} */}
               
             </Box>
           </Box>

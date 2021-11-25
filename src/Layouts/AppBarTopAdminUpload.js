@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -12,12 +12,15 @@ import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
+import { Redirect, useHistory } from 'react-router';
 import Menu from '@mui/material/Menu';
 
 import {Link, NavLink} from 'react-router-dom';
 function AppBarTopAdminUpload() {
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [navigate, setNavigate] = useState(false);
+    let history = useHistory();
     // const 
     const handleChange = (event) => {
         setAuth(event.target.checked);
@@ -30,6 +33,14 @@ function AppBarTopAdminUpload() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const handleRedirect=()=>{
+        // setNavigate(true);
+        history.push('/admin');
+    }
+
+    // if(navigate){
+    //     return(<Redirect to='/admin'/>)
+    // }
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -65,7 +76,7 @@ function AppBarTopAdminUpload() {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuItem ><Link style={{textDecoration:'none', color: 'black'}} to ="/" >View Resumes</Link></MenuItem>
+                            <MenuItem onClick={handleRedirect}>View Resumes</MenuItem>
                             <MenuItem onClick={handleClose}>Logout</MenuItem>
                         </Menu>
                     

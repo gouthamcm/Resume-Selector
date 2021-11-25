@@ -38,7 +38,7 @@ function AppBarTopUser() {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         
                     </Typography>
-                        <IconButton
+                        {/* <IconButton
                             size="large"
                             aria-label="account of current user"
                             aria-controls="menu-appbar"
@@ -49,8 +49,8 @@ function AppBarTopUser() {
                             
                         >
                             <AccountCircle />
-                        </IconButton>
-                        <Menu
+                        </IconButton> */}
+                        {/* <Menu
                             id="menu-appbar"
                             anchorEl={anchorEl}
                             anchorOrigin={{
@@ -65,9 +65,9 @@ function AppBarTopUser() {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            {/* <MenuItem ><Link style={{textDecoration:'none', color: 'black'}} to ="/admin/upload" >Upload Resume</Link></MenuItem> */}
+                            <MenuItem ><Link style={{textDecoration:'none', color: 'black'}} to ="/admin/upload" >Upload Resume</Link></MenuItem>
                             <MenuItem onClick={handleClose}>Logout</MenuItem>
-                        </Menu>
+                        </Menu> */}
                     
                     {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         News
