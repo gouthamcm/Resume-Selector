@@ -12,7 +12,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useHistory } from 'react-router';
+import { useHistory, Redirect } from 'react-router';
 import AppBarTopUser from '../Layouts/AppBarTopUser';
 function Copyright(props) {
     return (
@@ -32,6 +32,7 @@ const theme = createTheme();
 export default function Login() {
 
     const [token, setToken] = React.useState('');
+    const [redirect, setRedirect] = React.useState(false);
 
     let history = useHistory();
     const handleRegister = () => {
@@ -43,11 +44,13 @@ export default function Login() {
         const data = new FormData(event.currentTarget);
         // eslint-disable-next-line no-console
         console.log({
-            email: data.get('email'),
+            email: data.get('username'),
             password: data.get('password'),
         });
+        // setToken('auth_token');
+        
         // fetch(
-        //     url,
+        //     'localhost:8000/token/login/',
         //     {
         //         method: 'POST',
         //         body: data
@@ -55,7 +58,10 @@ export default function Login() {
         // )
         // .then((response)=>response.json())
         // .then((result)=>{
-                // setToken(result.token);
+        //         setToken(result.auth_token);
+        //         localStorage.setItem('auth_token', token);
+        //         // console.log(token);
+        //         setRedirect(true);
         //     console.log('Success', result);
         // })
         // .catch((error) => {
@@ -63,7 +69,9 @@ export default function Login() {
         // });
     };
 
-    
+    if(redirect){
+        return(<Redirect to ='/admin'/>);
+    }
     return (
         <div>
             <AppBarTopUser />
@@ -89,10 +97,10 @@ export default function Login() {
                                 margin="normal"
                                 required
                                 fullWidth
-                                id="email"
-                                label="Email Address"
-                                name="email"
-                                autoComplete="email"
+                                id="username"
+                                label="Username"
+                                name="username"
+                                autoComplete="username"
                                 autoFocus
                             />
                             <TextField

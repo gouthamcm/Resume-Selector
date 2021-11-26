@@ -4,7 +4,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -18,7 +18,7 @@ import Divider from '@mui/material/Divider';
 
 const theme = createTheme();
 
-export default function Landing() {
+function Landing() {
     const [navigate, setNavigate] = React.useState(false);
     // const [ref, setRef] = useState('');
     let history = useHistory();
@@ -113,3 +113,4 @@ export default function Landing() {
     </ThemeProvider>
   );
 }
+export default Landing

@@ -42,15 +42,16 @@ function SignUp() {
         const data = new FormData(event.currentTarget);
         // eslint-disable-next-line no-console
         console.log({
-            name: data.get('name'),
+            name: data.get('username'),
             email: data.get('email'),
             password: data.get('password'),
+            
         });
         // fetch(
-        //     url,
+        //     'localhost:8000/auth/users/',
         //     {
         //         method: 'POST',
-        //         body: formData
+        //         body: data
         //     }
         // )
         // .then((response)=>response.json())
@@ -60,11 +61,12 @@ function SignUp() {
         // })
         // .catch((error) => {
         //     console.log('Error', error);
+        
         // });
     };
 
     if(redirect){
-        return(<Redirect to ='/'/>);
+        return(<Redirect to ='/signin'/>);
     }
     return (
         <div>
@@ -90,12 +92,12 @@ function SignUp() {
                             <Grid container spacing={2}>
                                 <Grid item xs={12} >
                                     <TextField
-                                        autoComplete="given-name"
-                                        name="name"
+                                        // autoComplete="given-name"
+                                        name="username"
                                         required
                                         fullWidth
-                                        id="name"
-                                        label="Name"
+                                        id="username"
+                                        label="Username"
                                         autoFocus
                                     />
                                 </Grid>

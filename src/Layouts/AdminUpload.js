@@ -1,7 +1,7 @@
 import { Grid, TextField, Box, Container, Paper, Typography, Button } from '@mui/material'
 import Send from '@mui/icons-material/Send';
 import { styled } from '@mui/material/styles';
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import AppBarTop from './AppBarTop';
 import AppBarTopAdmin from './AppBarTopAdminUpload';
 const Input = styled('input')({
@@ -10,39 +10,44 @@ const Input = styled('input')({
 
 function AdminUpload() {
     const [selectedFile, setSelectedFile] = useState();
-	const [isFilePicked, setIsFilePicked] = useState(false);
+    const [isFilePicked, setIsFilePicked] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     // const [email, setEmail] = useState('');
     const [phNumber, setPhNumber] = useState('');
 
-	const changeHandler = (event) => {
-		setSelectedFile(event.target.files[0]);
-		setIsFilePicked(true);
-	};
+    const changeHandler = (event) => {
+        setSelectedFile(event.target.files[0]);
+        setIsFilePicked(true);
+    };
 
     const handleSubmission = () => {
         const formData = new FormData();
-        formData.append('First Name', firstName);
-        formData.append('Last Name', lastName);
-        // formData.append('Email', email);
-        formData.append('Phone Number', phNumber);
-        formData.append('File', selectedFile);
+        formData.append('first_name', firstName);
+        formData.append('last_name', lastName);
+        // formData.append('email', email);
+        formData.append('phone_number', phNumber);
+        formData.append('file', selectedFile);
         console.log(formData);
+        let token = localStorage.getItem('auth_token');
+        
         // fetch(
-        //     url,
+        //     'localhost:8000/upload_resume/',
         //     {
         //         method: 'POST',
+        //         headers: {
+        //             'Authorization': token,
+        //         },
         //         body: formData
         //     }
         // )
-        // .then((response)=>response.json())
-        // .then((result)=>{
-        //     console.log('Success', result);
-        // })
-        // .catch((error) => {
-        //     console.log('Error', error);
-        // });
+        //     .then((response) => response.json())
+        //     .then((result) => {
+        //         console.log('Success', result);
+        //     })
+        //     .catch((error) => {
+        //         console.log('Error', error);
+        //     });
     };
 
     return (
@@ -63,19 +68,19 @@ function AdminUpload() {
                                     label="First name"
                                     fullWidth
                                     autoComplete="given-name"
-                                    onInput={e=>setFirstName(e.target.value)}
+                                    onInput={e => setFirstName(e.target.value)}
                                     variant="standard"
                                 />
                             </Grid>
                             <Grid item xs={12} sm={6}>
                                 <TextField
-                                    
+
                                     id="lastName"
                                     name="lastName"
                                     label="Last name"
                                     fullWidth
                                     autoComplete="family-name"
-                                    onInput={e=>setLastName(e.target.value)}
+                                    onInput={e => setLastName(e.target.value)}
                                     variant="standard"
                                 />
                             </Grid>
@@ -92,28 +97,28 @@ function AdminUpload() {
                             </Grid> */}
                             <Grid item xs={12}>
                                 <TextField
-                                    
+
                                     id="phone"
                                     name="phone"
                                     label="PhoneNumber"
                                     fullWidth
                                     autoComplete="tel"
-                                    onInput={e=> setPhNumber(e.target.value)}
+                                    onInput={e => setPhNumber(e.target.value)}
                                     variant="standard"
                                 />
                             </Grid>
                             <Grid item xs={12} sm={4}>
                                 <label htmlFor="contained-button-file">
-                                    <Input type="file" name="file" id="contained-button-file" multiple onChange={changeHandler}/>
-                                    
+                                    <Input type="file" name="file" id="contained-button-file" multiple onChange={changeHandler} />
+
                                     <Button variant="contained" component="span">
                                         Upload
                                     </Button>
-                                    {isFilePicked ?(
-                                    <p>
-                                        {selectedFile.name}
-                                    </p>    
-                                    ):(
+                                    {isFilePicked ? (
+                                        <p>
+                                            {selectedFile.name}
+                                        </p>
+                                    ) : (
                                         <p>please select a file</p>
                                     )}
                                 </label>

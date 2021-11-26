@@ -14,14 +14,14 @@ function App() {
     <>
       <Router>
         <Switch>
-          {/* <Route path="/" exact copmonent={Landing} /> */}
-          <Route path="/welcome" component={Landing} />
-          <Route path="/admin"  exact component={AdminView} />
-          <Route path="/signin" component={Login} />
-          <Route path="/register" component={SignUp} />
-          <Route path="/user" component={UserView} />
+          <Route exact path="/"  copmonent={SignUp} />
+          <Route exact path="/welcome" component={Landing} />
+          <Route exact path="/admin" component={AdminView} />
+          <Route exact path="/signin" component={Login} />
+          <Route exact path="/register" component={SignUp} />
+          <Route exact path="/user" component={UserView} />
           {/* <Route path="/signin" component={Login} /> */}
-          <Route path="/admin/upload" component={AdminUpload} />
+          <Route exact path="/admin/upload" component={AdminUpload} />
           <Route path="*" component={PageNotFound} />
         </Switch>
       </Router>

@@ -49,7 +49,7 @@ function UserUpload() {
         const formData = new FormData();
         // setIsFilePicked(false);
         // window.location.reload();
-        
+
         if (timerRef.current) {
             clearTimeout(timerRef.current);
         }
@@ -57,34 +57,38 @@ function UserUpload() {
         if (query !== 'idle') {
             setQuery('idle');
             return;
-          }
-      
+        }
+
         setQuery('progress');
 
         timerRef.current = window.setTimeout(() => {
             setQuery('success');
         }, 2000);
         setIsFilePicked(false);
-        formData.append('First Name', firstName);
-        formData.append('Last Name', lastName);
-        formData.append('Email', email);
-        formData.append('Phone Number', phNumber);
-        formData.append('File', selectedFile);
+        formData.append('first_name', firstName);
+        formData.append('last_name', lastName);
+        formData.append('email', email);
+        formData.append('phone_number', phNumber);
+        formData.append('file', selectedFile);
         console.log(formData);
+        let token = localStorage.getItem('auth_token');
         // fetch(
-        //     url,
+        //     'localhost:8000/upload_resume/',
         //     {
         //         method: 'POST',
+        //         headers: {
+        //             'Authorization': token,
+        //         },
         //         body: formData
         //     }
         // )
-        // .then((response)=>response.json())
-        // .then((result)=>{
-        //     console.log('Success', result);
-        // })
-        // .catch((error) => {
-        //     console.log('Error', error);
-        // });
+        //     .then((response) => response.json())
+        //     .then((result) => {
+        //         console.log('Success', result);
+        //     })
+        //     .catch((error) => {
+        //         console.log('Error', error);
+        //     });
     };
 
     return (
