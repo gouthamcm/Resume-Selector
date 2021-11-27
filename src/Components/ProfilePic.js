@@ -14,6 +14,8 @@ const AccountStyle = styled('div')(({ theme }) => ({
 }));
 
 function ProfilePic() {
+    let username = localStorage.getItem('username');
+    // let variable = username[0];
     return (
         <div>
             <Box sx={{m:2}}>
@@ -25,7 +27,7 @@ function ProfilePic() {
                         <Grid item xs={9}>
                             <Box sx={{ m: 1 }}>
                                 <Typography variant="subtitle" sx={{ color: 'text.primary' }}>
-                                    <strong>Hello User :p</strong>
+                                    <strong>Hello {username} :p</strong>
                                 </Typography>
                             </Box>
                         </Grid>

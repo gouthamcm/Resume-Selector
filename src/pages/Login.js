@@ -63,7 +63,7 @@ export default function Login() {
                 setToken(result.auth_token);
 
                 localStorage.setItem('auth_token', result.auth_token);
-
+                localStorage.setItem('username', data.get('username'));
                 // let token2 = localStorage.getItem('auth_token');
                 // console.log('token is '+token2)
                 setRedirect(true);

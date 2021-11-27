@@ -13,8 +13,9 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import resume from '../Assets/resume.png'
 
-import {Link, NavLink} from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 function AppBarTopUser() {
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -34,11 +35,12 @@ function AppBarTopUser() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
-                    
+                    <Box component="img" src={resume} sx={{ width: 110, height: 60, m: 1 }}>
+                    </Box>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        
+
                     </Typography>
-                        {/* <IconButton
+                    {/* <IconButton
                             size="large"
                             aria-label="account of current user"
                             aria-controls="menu-appbar"
@@ -50,7 +52,7 @@ function AppBarTopUser() {
                         >
                             <AccountCircle />
                         </IconButton> */}
-                        {/* <Menu
+                    {/* <Menu
                             id="menu-appbar"
                             anchorEl={anchorEl}
                             anchorOrigin={{
@@ -68,7 +70,7 @@ function AppBarTopUser() {
                             <MenuItem ><Link style={{textDecoration:'none', color: 'black'}} to ="/admin/upload" >Upload Resume</Link></MenuItem>
                             <MenuItem onClick={handleClose}>Logout</MenuItem>
                         </Menu> */}
-                    
+
                     {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         News
                     </Typography>

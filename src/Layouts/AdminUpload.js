@@ -1,4 +1,4 @@
-import { Grid, TextField, Box, Container, Paper, Typography, Button } from '@mui/material'
+import { Grid, TextField, Box, Container, Paper, Typography, Button, Alert, AlertTitle } from '@mui/material'
 import Send from '@mui/icons-material/Send';
 import { styled } from '@mui/material/styles';
 import React, { useState } from 'react'
@@ -23,20 +23,20 @@ function AdminUpload() {
 
     const handleSubmission = () => {
         const formData = new FormData();
-        formData.append('first_name', firstName+lastName);
+        formData.append('first_name', firstName + lastName);
         // formData.append('last_name', lastName);
         // formData.append('email', email);
         // formData.append('phone_number', phNumber);
         formData.append('file', selectedFile);
         // console.log(formData);
         let token = localStorage.getItem('auth_token');
-        console.log('token: '+token);
+        console.log('token: ' + token);
         fetch(
             'http://127.0.0.1:8000/upload_resume/',
             {
                 method: 'POST',
                 headers: {
-                    'Authorization': 'Token '+token,
+                    'Authorization': 'Token ' + token,
                     // 'Content-Type': 'application/fo'
                 },
                 body: formData,
@@ -46,6 +46,10 @@ function AdminUpload() {
             .then((response) => response.json())
             .then((result) => {
                 console.log('Success', result);
+                <Alert severity="success">
+                    <AlertTitle>Success</AlertTitle>
+                    Resume uploaded — <strong>You can enter more!</strong>
+                </Alert>
             })
             .catch((error) => {
                 console.log('Error', error);

@@ -15,7 +15,9 @@ import MenuItem from '@mui/material/MenuItem';
 import { Redirect, useHistory } from 'react-router';
 import Menu from '@mui/material/Menu';
 
-import {Link, NavLink} from 'react-router-dom';
+import resume from '../Assets/resume.png'
+
+import { Link, NavLink } from 'react-router-dom';
 function AppBarTopAdminUpload() {
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -33,7 +35,7 @@ function AppBarTopAdminUpload() {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    const handleRedirect=()=>{
+    const handleRedirect = () => {
         // setNavigate(true);
         history.push('/admin');
     }
@@ -43,43 +45,45 @@ function AppBarTopAdminUpload() {
     // }
     return (
         <Box sx={{ flexGrow: 1 }}>
+
             <AppBar position="static">
                 <Toolbar>
-                    
+                    <Box component="img" src={resume} sx={{ width: 110, height: 60, m: 1 }}>
+                    </Box>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        
+
                     </Typography>
-                        <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleMenu}
-                            color="inherit"
-                            edge="end"
-                            
-                        >
-                            <AccountCircle />
-                        </IconButton>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorEl}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                        >
-                            <MenuItem onClick={handleRedirect}>View Resumes</MenuItem>
-                            <MenuItem onClick={handleClose}>Logout</MenuItem>
-                        </Menu>
-                    
+                    <IconButton
+                        size="large"
+                        aria-label="account of current user"
+                        aria-controls="menu-appbar"
+                        aria-haspopup="true"
+                        onClick={handleMenu}
+                        color="inherit"
+                        edge="end"
+
+                    >
+                        <AccountCircle />
+                    </IconButton>
+                    <Menu
+                        id="menu-appbar"
+                        anchorEl={anchorEl}
+                        anchorOrigin={{
+                            vertical: 'top',
+                            horizontal: 'right',
+                        }}
+                        keepMounted
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'right',
+                        }}
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                    >
+                        <MenuItem onClick={handleRedirect}>View Resumes</MenuItem>
+                        <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    </Menu>
+
                     {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         News
                     </Typography>

@@ -14,6 +14,7 @@ import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import { Redirect, useHistory } from 'react-router';
 import Menu from '@mui/material/Menu';
+import resume from '../Assets/resume.png'
 
 import {Link, NavLink} from 'react-router-dom';
 function AppBarTop() {
@@ -41,7 +42,10 @@ function AppBarTop() {
     //     return(<Redirect to='/admin/upload'/>)
     // }
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box  sx={{ flexGrow: 1 }}>
+            {/* <Box component="img" src={resume} sx={{ width: 110, height: 60, m:1}}>
+
+            </Box> */}
             <AppBar position="static">
                 <Toolbar>
                     
