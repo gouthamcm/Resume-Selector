@@ -31,18 +31,37 @@ function AppBarTopAdminUpload() {
     const handleMenu = (event) => {
         setAnchorEl(event.currentTarget);
     };
-
     const handleClose = () => {
         setAnchorEl(null);
+    };
+    const handleLogout = () => {
+        fetch(
+            'http://127.0.0.1:8000/auth/token/logout/',
+            {
+                method: 'POST',
+                
+                
+            }
+        )
+            .then((response) => response.json())
+            .then((result) => {
+                console.log('Success', result);
+                localStorage.clear();
+                setNavigate(true);
+            })
+            .catch((error) => {
+                console.log('Error', error);
+                // console.log("error");
+            });
     };
     const handleRedirect = () => {
         // setNavigate(true);
         history.push('/admin');
     }
 
-    // if(navigate){
-    //     return(<Redirect to='/admin'/>)
-    // }
+    if(navigate){
+        return(<Redirect to='/signin'/>)
+    }
     return (
         <Box sx={{ flexGrow: 1 }}>
 
@@ -81,7 +100,7 @@ function AppBarTopAdminUpload() {
                         onClose={handleClose}
                     >
                         <MenuItem onClick={handleRedirect}>View Resumes</MenuItem>
-                        <MenuItem onClick={handleClose}>Logout</MenuItem>
+                        <MenuItem onClick={handleLogout}>Logout</MenuItem>
                     </Menu>
 
                     {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>

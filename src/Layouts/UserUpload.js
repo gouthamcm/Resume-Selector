@@ -1,4 +1,4 @@
-import { Grid, TextField, Box, Container, Paper, Typography, Button, Fade, CircularProgress } from '@mui/material'
+import { Grid, TextField, Box, Container, Paper, Typography, Button, Fade, CircularProgress, Alert, AlertTitle } from '@mui/material'
 import Send from '@mui/icons-material/Send';
 import { styled } from '@mui/material/styles';
 import React, { useState } from 'react'
@@ -56,23 +56,20 @@ function UserUpload() {
         //     setQuery('success');
         // }, 2000);
         // setIsFilePicked(false);
-        formData.append('first_name', firstName+lastName);
+        formData.append('first_name', firstName+' '+lastName);
         // formData.append('last_name', lastName);
         // formData.append('email', email);
         // formData.append('phone_number', phNumber);
         formData.append('file', selectedFile);
         // console.log(formData);
 
-        let token = localStorage.getItem('auth_token');
-        console.log('token: ' + token);
+        // let token = localStorage.getItem('auth_token');
+        // console.log('token: ' + token);
         fetch(
             'http://127.0.0.1:8000/upload_resume/',
             {
                 method: 'POST',
-                headers: {
-                    'Authorization': 'Token ' + token,
-                    // 'Content-Type': 'application/fo'
-                },
+                
                 body: formData,
                 // mode: "no-cors"
             }
@@ -80,6 +77,10 @@ function UserUpload() {
             .then((response) => response.json())
             .then((result) => {
                 console.log('Success', result);
+                <Alert severity="success">
+                    <AlertTitle>Success</AlertTitle>
+                    Resume uploaded — <strong>You can enter more!</strong>
+                </Alert>
             })
             .catch((error) => {
                 console.log('Error', error);

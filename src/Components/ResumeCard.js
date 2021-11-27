@@ -6,49 +6,45 @@ import DownloadIcon from '@mui/icons-material/Download';
 
 function ResumeCard({ resumeData, ...other }) {
 
-    const handleDownload = () => {
-        
-    }
+    // const handleDownload = () => {
+    //     // window.open('http://127.0.0.1:8000/static/uploads/'+, '_blank');
+    // }
     return resumeData.map(ele => (
         <div>
             <Box sx={{ m: 2 }}>
                 <Card sx={{ maxWidth: 700 }}>
-                    <Grid container
-                    >
-                        <Grid item xs={1}>
-                            <Box sx={{ bgcolor: ele.color,  p: 2 }}>
-                                
-                            </Box>
-                        </Grid>
-                        <Grid item xs={8}>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {ele.first_name}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    Email id: {ele.email}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    Website: {ele.website}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                                    Skills: 
-                                </Typography>
 
-                            </CardContent>
-                        </Grid>
-                        <Grid spacing={0}
-                            direction="column"
-                            alignItems="center"
-                            justifyContent="center" item xs={3}>
 
-                            {/* <Chip icon={<DownloadIcon />} label="Download Resume" /> */}
-                        </Grid>
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            {ele.first_name}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            <strong>Email id:</strong> {ele.email}
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            <strong>Website:</strong> {ele.website}
+                        </Typography>
+                        
+
+                    </CardContent>
+
+                    <Grid spacing={0}
+                        direction="column"
+                        alignItems="center"
+                        justifyContent="center" item xs={3}>
+
+                        {/* <Chip icon={<DownloadIcon />} label="Download Resume" /> */}
                     </Grid>
+
                     <CardActions>
-                    <Button size="small">Mail</Button>
-                        <Button size="small">Call</Button>
-                        <Button size="small" onClick={handleDownload}>Download</Button>
+                        <Button variant="outlined" startIcon={<EmailIcon />}>
+                            Mail
+                        </Button>
+
+                        <Button variant="outlined" startIcon={<DownloadIcon />} onClick={() => {window.open('http://127.0.0.1:8000/static/uploads/'+ele.first_name, '_blank');}} >
+                            Download
+                        </Button>
                     </CardActions>
                 </Card>
             </Box>

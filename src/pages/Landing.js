@@ -48,7 +48,8 @@ function Landing() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
+            // backgroundImage: 'url(https://images.unsplash.com/photo-1637410130290-a905c3f910e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzODA1MjQ4Nw&ixlib=rb-1.2.1&q=80&w=1080)',
+            backgroundImage: 'url(https://images.unsplash.com/photo-1511984804822-e16ba72f5848?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGhpcmluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],

@@ -1,79 +1,85 @@
-HARRY POTTER
+(XXX)-XXX-XXXX J O h n S Now linkedin.com/in/yourlink
 
-© github.com/harrypotter % harrypotter.me &% harrypotter@ gmail.com
-9 Hogwarts Castle, Highlands, Great Britain &(123)-456-789
-Targeting a 4-month, full-time internship position from 2012.01-2012.05(delete it if needed)
+ 
 
+ 
+
+ 
+
+youremail@email.com Target Job Portfolio
++ Keyword 1 + Keyword 2 + Keyword 3 + Keyword 4
+Impact: A funded research proposals, B technical reports, & C scientific publications with X+ downloads & Y+ citations, Z awards
 EDUCATION
+Master of Science, Microbiology, University of the North, GPA: x.xx/4.00 Mon yyyy — Mon yyyy
+Bachelor of Science, Electrical Engineering, University of Westeros, GPA: x.xx/10.00 Mon yyyy — Mon yyyy
+PROJECTS
+Role 1, Department Name Mon yyyy — Mon yyyy
 
-aaa’bbb University, Britain Jan 1998 - Feb 2002
-Master of Magic & Alchemy
++ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit scelerisque urna, id facilisis metus vestibulum at. In nec
+sapien dignissim, ultricies dolor accumsan, malesuada augue
 
- 
++ Aenean nec dui et felis mattis suscipit ut sed tortor. Sed nec viverra nulla. Mauris in dapibus quam.Aenean ut ligula sed orci
+interdum scelerisque. Cras eget odio mattis, accumsan arcu ac, interdum enim. Quisque et pharetra sem, in euismod leo
 
-bbb’cce university, Britain July 1994 - June 2000
-Bachelor of Fantastic Beasts
+Role 2, Department Name Mon yyyy — Mon yyyy
 
- 
++ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit scelerisque urna, id facilisis metus vestibulum at. In nec
+sapien dignissim, ultricies dolor accumsan, malesuada augue
 
-TECHNICAL SKILLS
-Programming: aaa,bbb,ccc,ddd,eee,fff,ggg,hhh
-Software & Tools: Backend: qqqq,wwww,eeee,rrrr,tttt,yyyy,uuuu,iiii
++ Aenean nec dui et felis mattis suscipit ut sed tortor. Sed nec viverra nulla. Mauris in dapibus quam.Aenean ut ligula sed orci
+interdum scelerisque. Cras eget odio mattis, accumsan arcu ac, interdum enim. Quisque et pharetra sem, in euismod leo
 
-FrontEnd: aaaaa,bbbbb,eeee,cccc
-Others: uuuu,uyyy,ooo0,aaaa,vvv,eeee
+Role 3, Department Name Mon yyyy — Mon yyyy
 
-PROJECTS (ALL AVAILABLE IN GITHUB)
++ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit scelerisque urna, id facilisis metus vestibulum at. In nec
+sapien dignissim, ultricies dolor accumsan, malesuada augue
 
- 
-
-Project1111111111111111111111111111111
-
-- There were white out conditions in the town; subsequently, the roads were impassable.
-- Lets all be unique together until we realise we are all the same.
-
-- Should we start class now, or should we wait for everyone to get here?
-
-Project2222222222222222222222222222222222222
-
-- The waves were crashing on the shore; it was a lovely sight.
-
-- The clock within this blog and the clock on my laptop are | hour different from each other.She only paints with bold
-colors; she does not like pastels. Wednesday is hump day, but has anyone asked the camel if hes happy about it?
-
-- He turned in the research paper on Friday; otherwise, he would have not passed the class.
-
-- lam happy to take your donation; any amount will be greatly appreciated.
-
-- There was no ice cream in the freezer, nor did they have money to go to the store.
-
-Project33333333333333333333333333333333333333
-
-- I currently have 4 windows open up and I dont know why.Should we start class now, or should we wait for everyone
-to get here? - Someone I know recently combined Maple Syrup buttered Popcorn thinking it would taste like caramel
-popcorn. It didnt and they dont recommend anyone else do it either.
-
-- Should we start class now, or should we wait for everyone to get here.Lets all be unique together until we realise we
-are all the same.
-
-WORK EXPERIENCE
-
-Work Station1,Strange Place May 2002 - June 2004 Backend Developer
-- Someone I know recently combined Maple Syrup buttered Popcorn thinking it would taste like caramel popcorn. It
-didnt and they dont recommend anyone else do it either.
-
-- Should we start class now, or should we wait for everyone to get here.Lets all be unique together until we realise we
-are all the same.
++ Aenean nec dui et felis mattis suscipit ut sed tortor. Sed nec viverra nulla. Mauris in dapibus quam.Aenean ut ligula sed orci
+interdum scelerisque. Cras eget odio mattis, accumsan arcu ac, interdum enim. Quisque et pharetra sem, in euismod leo
 
  
 
-Work Station2,Strange Place2 June 2005 - April 2008
-Full-Stack Engineer
+EXPERIENCE
+XXX Scientist (Intern) Mon yyyy — Mon yyyy
+Add Company Name Here Location
 
-- Someone I know recently combined Maple Syrup buttered Popcorn thinking it would taste like caramel popcorn. It
-didnt and they dont recommend anyone else do it either.
++ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet justo porta magna ultrices ultricies. Nam sem augue,
+lobortis sit amet venenatis sed, rutrum vel dui. Fusce mauris libero, ultrices quis convallis venenatis, malesuada at neque. Vivamus
+facilisis metus enim, convallis egestas dui dictum vel. Integer lacus nisl, molestie vitae bibendum eget, finibus vitae ligula.
 
-- Should we start class now, or should we wait for everyone to get here.Lets all be unique together until we realise we
-are all the same.
++ Duis fermentum arcu vitae faucibus cursus. Praesent aliquet id risus dictum lobortis. Donec varius tincidunt aliquet.Nulla congue
+nulla sed accumsan consequat. Pellentesque facilisis cursus faucibus.
 
-AWARD
+YYY Engineer (Intern) Mon yyyy — Mon yyyy
+Add Company Name Here Location
++ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet justo porta magna ultrices ultricies. Nam sem augue,
+
+lobortis sit amet venenatis sed, rutrum vel dui. Fusce mauris libero, ultrices quis convallis venenatis, malesuada at neque.
+* Duis fermentum arcu vitae faucibus cursus. Praesent aliquet id risus dictum lobortis. Donec varius tincidunt aliquet.
+
+ 
+
+SKILLS
+
+Physics A,B, C, D, E, F
+Management G,H, 1, J, K,L, M
+Programming N,0,P,Q,R,S,T
+
+PUBLICATIONS
+
+ 
+
+1. Snow, J. Putting This Here Because | Published Something. /n Some Journal (2002).
+
+2. Doe, J. etal. Putting This Here Because | Published Something. /n Some Journal (1996).
+
+3. Doe, J. etal. Putting This Here Because | Published Something. /n a Super Bigggggg Journal (1984).
+
+4. Doe, J., Doe, J. & Snow, J. Putting This Here Because | Published Something. /n a Super Bigggggg Journal (1956).
+
+AWARDS & HONORS
+
+ 
+
+yyyy Award 1 ( $xxxxxx ); Award 2 ( $xxxxxx ); Award 3 ( $xxxxxx ); Award 4 ( $xxxxxx ); Award 5 ( $xxxxxx )
+yyyy Award 6 ( $xxxxxx ); Award 7 ( $xxxxxx ); Award 8 ( $xxxxxx )

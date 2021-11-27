@@ -7,6 +7,7 @@ import AppBarTop from '../Layouts/AppBarTop';
 import Feature from '../Layouts/Feature';
 import ResumeList from '../Layouts/ResumeList';
 import EmptyContent from '../Components/EmptyContent';
+import { Redirect } from 'react-router';
 // const data2 = [
 //     { Name: 'Sarthak', Phno: '8923918283', email: 'sarthak@gmail.com', date: 'time', skills: ['C++', 'SQL', 'Java'], color: 'success.main' },
 //     { Name: 'Nitin', Phno: '982398901', email: 'nitin@gmail.com', date: 'time', skills: ['C++', 'Python', 'Javascript'] },
@@ -72,6 +73,9 @@ function AdminView() {
             });
 
     }
+    if(localStorage.getItem('username')==null){
+        return(<Redirect to='/*'/>)
+    }
     return (
         <div>
             <Grid container spacing={3}>
@@ -82,8 +86,8 @@ function AdminView() {
                         <Autocomplete
                             multiple
                             id="tags-filled"
-                            options={top100Films.map((option) => option.title)}
-                            defaultValue={[top100Films[0].title]}
+                            options={topSkills.map((option) => option.title)}
+                            
                             freeSolo
                             renderTags={(value, getTagProps) =>
                                 value.map((option, index) => (
@@ -132,7 +136,7 @@ function AdminView() {
 
 export default AdminView
 
-const top100Films = [
+const topSkills = [
     { title: 'C' },
     { title: 'C++' },
     { title: 'Python' },

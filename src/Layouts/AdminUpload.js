@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import React, { useState } from 'react'
 import AppBarTop from './AppBarTop';
 import AppBarTopAdmin from './AppBarTopAdminUpload';
+import { Redirect } from 'react-router';
 const Input = styled('input')({
     display: 'none',
 });
@@ -23,22 +24,19 @@ function AdminUpload() {
 
     const handleSubmission = () => {
         const formData = new FormData();
-        formData.append('first_name', firstName + lastName);
+        formData.append('first_name', firstName + ' ' + lastName);
         // formData.append('last_name', lastName);
         // formData.append('email', email);
         // formData.append('phone_number', phNumber);
         formData.append('file', selectedFile);
         // console.log(formData);
-        let token = localStorage.getItem('auth_token');
-        console.log('token: ' + token);
+        // let token = localStorage.getItem('auth_token');
+        // console.log('token: ' + token);
         fetch(
             'http://127.0.0.1:8000/upload_resume/',
             {
                 method: 'POST',
-                headers: {
-                    'Authorization': 'Token ' + token,
-                    // 'Content-Type': 'application/fo'
-                },
+
                 body: formData,
                 // mode: "no-cors"
             }
@@ -56,7 +54,9 @@ function AdminUpload() {
                 // console.log("error");
             });
     };
-
+    if (localStorage.getItem('username') == null) {
+        return (<Redirect to='/*' />)
+    }
     return (
         <div>
             <AppBarTopAdmin />
