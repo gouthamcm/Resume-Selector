@@ -49,24 +49,29 @@ export default function Login() {
         });
         // setToken('auth_token');
         
-        // fetch(
-        //     'localhost:8000/token/login/',
-        //     {
-        //         method: 'POST',
-        //         body: data
-        //     }
-        // )
-        // .then((response)=>response.json())
-        // .then((result)=>{
-        //         setToken(result.auth_token);
-        //         localStorage.setItem('auth_token', token);
-        //         // console.log(token);
-        //         setRedirect(true);
-        //     console.log('Success', result);
-        // })
-        // .catch((error) => {
-        //     console.log('Error', error);
-        // });
+        fetch(
+            'http://127.0.0.1:8000/auth/token/login/',
+            {
+                method: 'POST',
+                body: data
+            }
+        )
+        .then((response)=>response.json())
+        .then((result)=>{
+                
+            console.log('Success', result);
+            setToken(result.auth_token);
+            
+                localStorage.setItem('auth_token', token);
+
+                console.log('token');
+                let token2 = localStorage.getItem('auth_token');
+                console.log(token2)
+                setRedirect(true);
+        })
+        .catch((error) => {
+            console.log('Error', error);
+        });
     };
 
     if(redirect){

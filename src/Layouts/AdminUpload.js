@@ -24,30 +24,33 @@ function AdminUpload() {
     const handleSubmission = () => {
         const formData = new FormData();
         formData.append('first_name', firstName);
-        formData.append('last_name', lastName);
+        // formData.append('last_name', lastName);
         // formData.append('email', email);
-        formData.append('phone_number', phNumber);
+        // formData.append('phone_number', phNumber);
         formData.append('file', selectedFile);
         console.log(formData);
         let token = localStorage.getItem('auth_token');
-        
-        // fetch(
-        //     'localhost:8000/upload_resume/',
-        //     {
-        //         method: 'POST',
-        //         headers: {
-        //             'Authorization': token,
-        //         },
-        //         body: formData
-        //     }
-        // )
-        //     .then((response) => response.json())
-        //     .then((result) => {
-        //         console.log('Success', result);
-        //     })
-        //     .catch((error) => {
-        //         console.log('Error', error);
-        //     });
+        console.log('token: '+token);
+        fetch(
+            'http://127.0.0.1:8000/upload_resume/',
+            {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Token '+token,
+                    // 'Content-Type': 'application/fo'
+                },
+                body: formData,
+                // mode: "no-cors"
+            }
+        )
+            .then((response) => response.json())
+            .then((result) => {
+                console.log('Success', result);
+            })
+            .catch((error) => {
+                console.log('Error', error);
+                // console.log("error");
+            });
     };
 
     return (

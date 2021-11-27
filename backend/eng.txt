@@ -1,0 +1,142 @@
+GOUTHAM PARAMESWARAN C M
+
+International Institute of Information Technology, Hyderabad
+
+@ goutham.898@gmail.com
+
+EXPERIENCE
+
+Intern - BlitzHiring.ai
+Web Application development
+(8 April 2020 - June 2020
+
+© https:/github.com/gouthamcm
+
+ 
+
+Q Remote Intern
+
+e Developed a Front-end application using REACT that performs
+end-to-end work in hiring, right from collecting resumes from
+different web portals like Naukri, LinkedIn to showing the cor-
+rect candidates using the Deep Learning framework.
+
+e Researched different chatbot frameworks and later built a com-
+plete end to end chatbot in the RASA framework after extensive
+data preparation.
+
+ACHIEVEMENTS
+
+e Secured All India Rank 1002 in GATE CSE 2021.
+
+ 
+
+e Winners of Smart India Hackathon 2020 for the problem state-
+ment issued by Govt. of Bihar.
+
+e Track Winners at HackVerse 2.0 hackathon conducted by NIT
+Surathkal.
+
+e Secured 4th Place in TransfiNITTe v:2 hackathon 2020 conducted
+by NIT Trichy.
+
+e Awarded Special merit certificate for being among the top 0.1
+per cent of successful candidates in Physics in AISSCE 2016.
+
+e Awarded Special merit certificate for obtaining Grade A1 in all
+the five subjects in AISSE 2014.
+
+TECHNICAL SKILLS
+
+e Programming Languages: C++, Javascript, JAVA, SQL, HTML,
+Python, BASH
+
+e Software & Tools: Android Studio, PyTorch, React
+
+ROLES AND RESPONSIBILITIES
+
+Technical Council
+Head
+8 May 2020 - April 2021
+
+ 
+
+9 NIT Trichy
+
+e Responsible for administering technology in NIT Trichy, taking
+initiatives for community development, and addressing campus
+issues by imparting feasible technical solutions.
+
+Spider R&D
+Application Developer
+
+(2 Sept 2018 - May 2020 9 NIT Trichy
+
+e Responsible for developing Apps targeting campus development
+and researching new techniques for making it successful.
+
+in https://www.linkedin.com/in/gouthamcm
+
+EDUCATION
+
+M.Tech. (CSE) -
+IIIT Hyderabad
+68 Aug 2021 - Present
+
+B.Tech. (ICE) - 8.16 CGPA
+NIT Trichy
+@4 July 2017 - June 2021
+
+CBSE(XII), Science - 94.2%
+Kendriya Vidyalaya
+6B 2016
+
+CBSE(X) - 10.0 CGPA
+Kendriya Vidyalaya
+6B 2014
+
+PROJECTS
+
+Agent Navigator
+
+e This project implements an agent trained to col-
+lect bananas in a large square world, trained us-
+ing Deep Reinforcement Learning. The goal of
+the agent is to collect as many bananas while
+avoiding obstructions in the path.
+
+ 
+
+Face Generation
+
+e This project uses Deep Convolutional Genera-
+tive Adversarial Network (DCGAN) to generate
+images of new and realistic human faces. The
+model has been trained on the CelebA dataset
+and has achieved an accuracy of 70%.
+
+TV Scripts Generation
+
+e This project generates TV Script using Recur-
+rent Neural Networks (RNNs). The model has
+been trained on the Seinfeld data set of scripts
+rom 9 seasons and thus generates a fake TV
+script based on the learning.
+
+NITT App
+
+e This is an android application built specifically
+‘o fulfil the needs of every student and faculty
+members of NIT Trichy by providing a platform
+‘or announcements, filing complaints and mess
+registration on their mobile phones.
+
+SportsFete App
+
+e The official app for Sports-fest 2018 of NIT
+Trichy, which provides a list of all the live, fu-
+ure and past events happening during the fest.
+Using this application, the user can check the
+scores of every department/branch and their
+current standings in the leader-board with a
+unique feature of live commentary.

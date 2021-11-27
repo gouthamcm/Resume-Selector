@@ -6,6 +6,9 @@ import DownloadIcon from '@mui/icons-material/Download';
 
 function ResumeCard({ resumeData, ...other }) {
 
+    const handleDownload = () => {
+        
+    }
     return resumeData.map(ele => (
         <div>
             <Box sx={{ m: 2 }}>
@@ -43,10 +46,9 @@ function ResumeCard({ resumeData, ...other }) {
                         </Grid>
                     </Grid>
                     <CardActions>
-                        <Chip icon={<EmailIcon />} label="Mail" />
-
-                        <Chip icon={<MdPhone />} label="Call" />
-                        <Chip icon={<DownloadIcon />} label="Download Resume" />
+                    <Button size="small">Mail</Button>
+                        <Button size="small">Call</Button>
+                        <Button size="small" onClick={handleDownload}>Download</Button>
                     </CardActions>
                 </Card>
             </Box>

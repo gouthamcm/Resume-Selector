@@ -45,28 +45,29 @@ function SignUp() {
             name: data.get('username'),
             email: data.get('email'),
             password: data.get('password'),
-            
+
         });
-        // fetch(
-        //     'localhost:8000/auth/users/',
-        //     {
-        //         method: 'POST',
-        //         body: data
-        //     }
-        // )
-        // .then((response)=>response.json())
-        // .then((result)=>{
-        //     console.log('Success', result);
-        //      setRedirect(true);
-        // })
-        // .catch((error) => {
-        //     console.log('Error', error);
-        
-        // });
+        fetch(
+            'http://127.0.0.1:8000/auth/users/',
+            {
+                method: 'POST',
+                body: data,
+                    
+            }
+        )
+            .then((response) => response.json())
+            .then((result) => {
+                console.log('Success', result);
+                setRedirect(true);
+            })
+            .catch((error) => {
+                console.log('Error', error);
+
+            });
     };
 
-    if(redirect){
-        return(<Redirect to ='/signin'/>);
+    if (redirect) {
+        return (<Redirect to='/signin' />);
     }
     return (
         <div>

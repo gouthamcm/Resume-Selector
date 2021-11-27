@@ -31,25 +31,45 @@ function AdminView() {
         // console.log(value);
 
     };
-    console.log(skills);
+    // console.log(skills);
 
     const handleSubmit = () => {
         // console.log("Inside submit");
+        const formData = new FormData();
+        formData.append("keywords", JSON.stringify(skills))
         let token = localStorage.getItem('auth_token');
         // console.log(JSON.stringify(skills));
+        fetch(
+            'http://127.0.0.1:8000/get_resume',
+            {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Token '+token,
+                },
+                body: formData,
+            }
+        )
+        .then((response)=>response.json())
+        .then((result)=>{
+            console.log('Success', result.users);
+            // console.log('Success', result.users[0]);
+        })
+        .catch((error) => {
+            console.log('Error', error);
+        });
         // fetch(
-        //     'localhost:8000/get_resume',
+        //     'http://127.0.0.1:8000/get_resume',
         //     {
-        //         method: 'GET',
+        //         method: 'POST',
         //         headers: {
-        //             'Authorization': token,
+        //             'Authorization': 'Token '+token,
         //         },
-        //         body: JSON.stringify(skills),
+        //         body: formData,
         //     }
         // )
         // .then((response)=>response.json())
         // .then((result)=>{
-        //     console.log('Success', result);
+        //     console.log('Success', result.users);
         // })
         // .catch((error) => {
         //     console.log('Error', error);
