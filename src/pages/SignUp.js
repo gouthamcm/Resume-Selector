@@ -37,16 +37,18 @@ function SignUp() {
     const handleSignin = () => {
         history.push('/signin');
     }
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        // eslint-disable-next-line no-console
-        console.log({
-            name: data.get('username'),
-            email: data.get('email'),
-            password: data.get('password'),
+        
+        // console.log({
+        //     name: data.get('username'),
+        //     email: data.get('email'),
+        //     password: data.get('password'),
 
-        });
+        // });
+        
         fetch(
             'http://127.0.0.1:8000/auth/users/',
             {

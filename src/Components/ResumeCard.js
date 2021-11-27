@@ -23,16 +23,16 @@ function ResumeCard({ resumeData, ...other }) {
                         <Grid item xs={8}>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
-                                    {ele.Name}
+                                    {ele.first_name}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
                                     Email id: {ele.email}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
-                                    Phone no: {ele.Phno}
+                                    Website: {ele.website}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
-                                    Skills: {ele.skills.map(skill => skill + "   ")}
+                                    Skills: 
                                 </Typography>
 
                             </CardContent>

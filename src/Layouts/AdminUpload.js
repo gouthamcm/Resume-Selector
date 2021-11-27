@@ -23,12 +23,12 @@ function AdminUpload() {
 
     const handleSubmission = () => {
         const formData = new FormData();
-        formData.append('first_name', firstName);
+        formData.append('first_name', firstName+lastName);
         // formData.append('last_name', lastName);
         // formData.append('email', email);
         // formData.append('phone_number', phNumber);
         formData.append('file', selectedFile);
-        console.log(formData);
+        // console.log(formData);
         let token = localStorage.getItem('auth_token');
         console.log('token: '+token);
         fetch(

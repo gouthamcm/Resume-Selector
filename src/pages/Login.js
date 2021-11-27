@@ -43,12 +43,12 @@ export default function Login() {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         // eslint-disable-next-line no-console
-        console.log({
-            email: data.get('username'),
-            password: data.get('password'),
-        });
+        // console.log({
+        //     email: data.get('username'),
+        //     password: data.get('password'),
+        // });
         // setToken('auth_token');
-        
+
         fetch(
             'http://127.0.0.1:8000/auth/token/login/',
             {
@@ -56,26 +56,25 @@ export default function Login() {
                 body: data
             }
         )
-        .then((response)=>response.json())
-        .then((result)=>{
-                
-            console.log('Success', result);
-            setToken(result.auth_token);
-            
-                localStorage.setItem('auth_token', token);
+            .then((response) => response.json())
+            .then((result) => {
 
-                console.log('token');
-                let token2 = localStorage.getItem('auth_token');
-                console.log(token2)
+                console.log('Success', result);
+                setToken(result.auth_token);
+
+                localStorage.setItem('auth_token', result.auth_token);
+
+                // let token2 = localStorage.getItem('auth_token');
+                // console.log('token is '+token2)
                 setRedirect(true);
-        })
-        .catch((error) => {
-            console.log('Error', error);
-        });
+            })
+            .catch((error) => {
+                console.log('Error', error);
+            });
     };
 
-    if(redirect){
-        return(<Redirect to ='/admin'/>);
+    if (redirect) {
+        return (<Redirect to='/admin' />);
     }
     return (
         <div>
