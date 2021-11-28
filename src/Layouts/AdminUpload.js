@@ -16,12 +16,12 @@ function AdminUpload() {
     const [lastName, setLastName] = useState('');
     // const [email, setEmail] = useState('');
     const [phNumber, setPhNumber] = useState('');
-
+    
     const changeHandler = (event) => {
         setSelectedFile(event.target.files[0]);
         setIsFilePicked(true);
     };
-
+    
     const handleSubmission = () => {
         const formData = new FormData();
         formData.append('first_name', firstName + ' ' + lastName);
@@ -57,6 +57,7 @@ function AdminUpload() {
     if (localStorage.getItem('username') == null) {
         return (<Redirect to='/*' />)
     }
+    
     return (
         <div>
             <AppBarTopAdmin />

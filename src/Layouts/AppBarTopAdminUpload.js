@@ -22,12 +22,15 @@ function AppBarTopAdminUpload() {
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [navigate, setNavigate] = useState(false);
+    const [navigateWelcome, setNavigateWelcome] = useState(false);
     let history = useHistory();
     // const 
     const handleChange = (event) => {
         setAuth(event.target.checked);
     };
-
+    const handleWelcome = ()=> {
+        setNavigateWelcome(true);
+    }
     const handleMenu = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -62,12 +65,15 @@ function AppBarTopAdminUpload() {
     if(navigate){
         return(<Redirect to='/signin'/>)
     }
+    if(navigateWelcome){
+        return (<Redirect to='/welcome' />)
+    }
     return (
         <Box sx={{ flexGrow: 1 }}>
 
             <AppBar position="static">
                 <Toolbar>
-                    <Box component="img" src={resume} sx={{ width: 110, height: 60, m: 1 }}>
+                    <Box  component="img" src={resume} sx={{ width: 110, height: 60, m: 1 }}>
                     </Box>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 

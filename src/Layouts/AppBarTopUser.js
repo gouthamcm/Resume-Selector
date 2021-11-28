@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -14,16 +14,20 @@ import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import resume from '../Assets/resume.png'
+import { Redirect } from 'react-router';
 
 import { Link, NavLink } from 'react-router-dom';
 function AppBarTopUser() {
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [navigateWelcome, setNavigateWelcome] = useState(false);
     // const 
     const handleChange = (event) => {
         setAuth(event.target.checked);
     };
-
+    const handleWelcome = ()=> {
+        setNavigateWelcome(true);
+    }
     const handleMenu = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -31,11 +35,14 @@ function AppBarTopUser() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    if(navigateWelcome){
+        return (<Redirect to='/welcome' />)
+    }
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
-                    <Box component="img" src={resume} sx={{ width: 110, height: 60, m: 1 }}>
+                    <Box onClick={handleWelcome} component="img" src={resume} sx={{ width: 110, height: 60, m: 1 }}>
                     </Box>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 
