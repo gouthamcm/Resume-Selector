@@ -22,15 +22,22 @@ import {Link, NavLink} from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
-  palette: {
-    primary: {
-        main: "#e4572e"
-      },
+    palette: {
+        primary: {
+            main: '#1976d2' // navy blue
+        },
       secondary: {
-        main: "#279af1"
+          
+          main: "#f17105" // orange -> pumpkin
+      },
+      tertiary: {
+          main: "#e6c229" //yellow -> jonquil
+      },
+      white: {
+          main: "#fff" // white
       }
-  }
-});
+    }
+  });
 
 function AppBarTop() {
     const [auth, setAuth] = React.useState(true);
@@ -82,7 +89,7 @@ function AppBarTop() {
             {/* <Box component="img" src={resume} sx={{ width: 110, height: 60, m:1}}>
 
             </Box> */}
-            <AppBar position="static" color="primary" >
+            <AppBar position="static" >
                 <Toolbar>
                     
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>

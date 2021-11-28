@@ -5,6 +5,25 @@ import React, { useState } from 'react'
 import AppBarTop from './AppBarTop';
 import AppBarTopAdmin from './AppBarTopAdminUpload';
 import { Redirect } from 'react-router';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#1976d2' // navy blue
+        },
+        secondary: {
+
+            main: "#f17105" // orange -> pumpkin
+        },
+        tertiary: {
+            main: "#e6c229" //yellow -> jonquil
+        },
+        white: {
+            main: "#fff" // white
+        }
+    }
+});
 const Input = styled('input')({
     display: 'none',
 });
@@ -67,58 +86,62 @@ function AdminUpload() {
 
     return (
         <div>
-            <AppBarTopAdmin />
-            {alert ? <Alert severity="success">
-                <AlertTitle>Success</AlertTitle>
-                Resume uploaded — <strong>You can enter more!</strong>
-            </Alert> : <></>}
-            {alertError ? <Alert severity="error">
-                <AlertTitle>Error</AlertTitle>
-                File not Uploaded — <strong>Try again!</strong>
-            </Alert> : <></>}
-            <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
-                <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
-                    <Typography component="h1" variant="h4" align="center">
-                        Upload Resume
-                    </Typography>
-                    <Box sx={{ m: 2 }}>
-                        <Grid container spacing={3}>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
-                                    required
-                                    id="firstName"
-                                    name="firstName"
-                                    label="First name"
-                                    fullWidth
-                                    autoComplete="given-name"
-                                    onInput={e => setFirstName(e.target.value)}
-                                    variant="standard"
-                                />
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
+            <ThemeProvider theme={theme}>
+                <AppBarTopAdmin />
 
-                                    id="lastName"
-                                    name="lastName"
-                                    label="Last name"
-                                    fullWidth
-                                    autoComplete="family-name"
-                                    onInput={e => setLastName(e.target.value)}
-                                    variant="standard"
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <TextField
-                                    required
-                                    id="email"
-                                    name="email"
-                                    label="Email"
-                                    fullWidth
-                                    onInput={e=> setEmail(e.target.value)}
-                                    variant="standard"
-                                />
-                            </Grid>
-                            {/* <Grid item xs={12}>
+                {alert ? <Alert severity="success">
+                    <AlertTitle>Success</AlertTitle>
+                    Resume uploaded — <strong>You can enter more!</strong>
+                </Alert> : <></>}
+                {alertError ? <Alert severity="error">
+                    <AlertTitle>Error</AlertTitle>
+                    File not Uploaded — <strong>Try again!</strong>
+                </Alert> : <></>}
+                <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+                    <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 }, boxShadow: 6, borderRadius: 5 }}>
+                        <Typography component="h1" variant="h4" align="center">
+                            Upload Resume
+                        </Typography>
+                        <Box sx={{ m: 2 }}>
+                            <Grid container spacing={3}>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        required
+                                        color="secondary"
+                                        id="firstName"
+                                        name="firstName"
+                                        label="First name"
+                                        fullWidth
+                                        autoComplete="given-name"
+                                        onInput={e => setFirstName(e.target.value)}
+                                        variant="standard"
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        color="secondary"
+                                        id="lastName"
+                                        name="lastName"
+                                        label="Last name"
+                                        fullWidth
+                                        autoComplete="family-name"
+                                        onInput={e => setLastName(e.target.value)}
+                                        variant="standard"
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextField
+                                        color="secondary"
+                                        required
+                                        id="email"
+                                        name="email"
+                                        label="Email"
+                                        fullWidth
+                                        onInput={e => setEmail(e.target.value)}
+                                        variant="standard"
+                                    />
+                                </Grid>
+                                {/* <Grid item xs={12}>
                                 <TextField
 
                                     id="phone"
@@ -130,34 +153,35 @@ function AdminUpload() {
                                     variant="standard"
                                 />
                             </Grid> */}
-                            <Grid item xs={12} sm={4}>
-                                <label htmlFor="contained-button-file">
-                                    <Input type="file" name="file" id="contained-button-file" multiple onChange={changeHandler} />
+                                <Grid item xs={12} sm={4}>
+                                    <label htmlFor="contained-button-file">
+                                        <Input type="file" name="file" id="contained-button-file" multiple onChange={changeHandler} />
 
-                                    <Button variant="contained" component="span">
-                                        Upload
+                                        <Button color="secondary" variant="contained" component="span">
+                                            Upload
+                                        </Button>
+                                        {isFilePicked ? (
+                                            <p>
+                                                {selectedFile.name}
+                                            </p>
+                                        ) : (
+                                            <p>please select a file</p>
+                                        )}
+                                    </label>
+                                    {progress ? <CircularProgress color="secondary" /> : <></>}
+
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <Button color="secondary" variant="contained" onClick={handleSubmission} endIcon={<Send />}>
+                                        Send
                                     </Button>
-                                    {isFilePicked ? (
-                                        <p>
-                                            {selectedFile.name}
-                                        </p>
-                                    ) : (
-                                        <p>please select a file</p>
-                                    )}
-                                </label>
-                                {progress ? <CircularProgress color="secondary" /> : <></>}
 
+                                </Grid>
                             </Grid>
-                            <Grid item xs={12}>
-                                <Button variant="contained" onClick={handleSubmission} endIcon={<Send />}>
-                                    Send
-                                </Button>
-
-                            </Grid>
-                        </Grid>
-                    </Box>
-                </Paper>
-            </Container>
+                        </Box>
+                    </Paper>
+                </Container>
+            </ThemeProvider>
         </div>
     )
 }

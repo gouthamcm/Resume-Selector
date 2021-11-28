@@ -2,6 +2,25 @@ import { Grid, TextField, Box, Container, Paper, Typography, Button, Fade, Circu
 import Send from '@mui/icons-material/Send';
 import { styled } from '@mui/material/styles';
 import React, { useState } from 'react'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#1976d2' // navy blue
+        },
+      secondary: {
+          
+          main: "#f17105" // orange -> pumpkin
+      },
+      tertiary: {
+          main: "#e6c229" //yellow -> jonquil
+      },
+      white: {
+          main: "#fff" // white
+      }
+    }
+  });
+
 const Input = styled('input')({
     display: 'none',
 });
@@ -96,6 +115,7 @@ function UserUpload() {
 
     return (
         <div>
+        <ThemeProvider theme={theme}>
             {alert ? <Alert severity="success">
                 <AlertTitle>Success</AlertTitle>
                 Resume uploaded — <strong>You can enter more!</strong>
@@ -105,7 +125,7 @@ function UserUpload() {
                 File not Uploaded — <strong>Try again!</strong>
             </Alert> : <></>}
             <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
-                <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
+                <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } ,  boxShadow: 6, borderRadius: 5}}>
                     <Typography component="h1" variant="h4" align="center">
                         Upload Resume
                     </Typography>
@@ -162,9 +182,9 @@ function UserUpload() {
                                 <label htmlFor="contained-button-file">
                                     <Input type="file" name="file" id="contained-button-file" multiple onChange={changeHandler} />
 
-                                    <Button variant="contained" component="span">
-                                        Upload
-                                    </Button>
+                                    <Button variant="contained" component="span" color="secondary" >
+                                    <Typography color='#fff'> Upload</Typography>
+                                    </Button >
                                     {isFilePicked ? (
                                         <p>
                                             {selectedFile.name}
@@ -173,18 +193,19 @@ function UserUpload() {
                                         <p>please select a file</p>
                                     )}
                                 </label>
-                                {progress ? <CircularProgress color="secondary" /> : <></>}
+                                {progress ? <CircularProgress color="tertiary" /> : <></>}
                             </Grid>
                             <Grid item xs={12}>
                                 
-                                <Button variant="contained" onClick={handleSubmission} endIcon={<Send />}>
-                                    Send
+                                <Button color="secondary" variant="contained" onClick={handleSubmission}  endIcon={<Send color="white" />}>
+                                    <Typography color='#fff'>Send</Typography>
                                 </Button>
                             </Grid>
                         </Grid>
                     </Box>
                 </Paper>
             </Container>
+        </ThemeProvider>
         </div>
     )
 }

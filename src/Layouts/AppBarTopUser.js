@@ -22,15 +22,23 @@ import { Link, NavLink } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#e4572e"
-    },
-    secondary: {
-      main: "#279af1"
+    palette: {
+        primary: {
+            main: '#1976d2' // navy blue
+        },
+      secondary: {
+          
+          main: "#f17105" // orange -> pumpkin
+      },
+      tertiary: {
+          main: "#e6c229" //yellow -> jonquil
+      },
+      white: {
+          main: "#fff" // white
+      }
     }
-  }
-});
+  });
+
 
 function AppBarTopUser() {
     const [auth, setAuth] = React.useState(true);
@@ -54,6 +62,7 @@ function AppBarTopUser() {
         return (<Redirect to='/welcome' />)
     }
     return (
+        <div>
         <ThemeProvider theme={theme}>
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" color="primary" >
@@ -114,6 +123,7 @@ function AppBarTopUser() {
             </AppBar>
         </Box>
         </ThemeProvider>
+        </div>
     )
 }
 

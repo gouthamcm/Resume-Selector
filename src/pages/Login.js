@@ -11,9 +11,28 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useHistory, Redirect } from 'react-router';
 import AppBarTopUser from '../Layouts/AppBarTopUser';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#1976d2' // navy blue
+        },
+      secondary: {
+          
+          main: "#f17105" // orange -> pumpkin
+      },
+      tertiary: {
+          main: "#e6c229" //yellow -> jonquil
+      },
+      white: {
+          main: "#fff" // white
+      }
+    }
+  });
 
 function Copyright(props) {
     return (
@@ -28,7 +47,7 @@ function Copyright(props) {
     );
 }
 
-const theme = createTheme();
+// const theme = createTheme();
 
 export default function Login() {
 
@@ -99,6 +118,7 @@ export default function Login() {
                         </Typography>
                         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                             <TextField
+                            color="secondary"
                                 margin="normal"
                                 required
                                 fullWidth
@@ -109,6 +129,7 @@ export default function Login() {
                                 autoFocus
                             />
                             <TextField
+                                color="secondary"
                                 margin="normal"
                                 required
                                 fullWidth
@@ -120,7 +141,7 @@ export default function Login() {
                             />
 
                             <Button
-                                
+                                color="secondary"
                                 type="submit"
                                 fullWidth
                                 variant="contained"
@@ -131,7 +152,7 @@ export default function Login() {
                             <Grid container>
 
                                 <Grid item>
-                                    <Link onClick={handleRegister} variant="body2">
+                                    <Link color="#e6c229" onClick={handleRegister} variant="body2">
                                         {"Don't have an account? Sign Up"}
                                     </Link>
                                 </Grid>

@@ -18,6 +18,25 @@ import { Redirect } from 'react-router';
 
 // let data=[]
 // const data3 = []
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#1976d2' // navy blue
+        },
+        secondary: {
+
+            main: "#f17105" // orange -> pumpkin
+        },
+        tertiary: {
+            main: "#e6c229" //yellow -> jonquil
+        },
+        white: {
+            main: "#fff" // white
+        }
+    }
+});
 
 function AdminView() {
     const [isLoading, setIsLoading] = useState(true)
@@ -61,7 +80,7 @@ function AdminView() {
                 if (result.users.length > 0) {
                     setIsData(true);
                 }
-                else{
+                else {
                     setIsData(false);
                 }
                 // console.log(data);
@@ -73,61 +92,62 @@ function AdminView() {
             });
 
     }
-    if(localStorage.getItem('username')==null){
-        return(<Redirect to='/*'/>)
+    if (localStorage.getItem('username') == null) {
+        return (<Redirect to='/*' />)
     }
     return (
         <div>
-            <Grid container spacing={3}>
-                <Grid item xs={3}>
+            <ThemeProvider theme={theme}>
+                <Grid container spacing={3}>
+                    <Grid item xs={3}>
 
-                    <Feature />
-                    <div>
-                        <Autocomplete
-                            multiple
-                            id="tags-filled"
-                            options={topSkills.map((option) => option.title)}
-                            
-                            freeSolo
-                            renderTags={(value, getTagProps) =>
-                                value.map((option, index) => (
-                                    <Chip variant="outlined" label={option} {...getTagProps({ index })} />
-                                ))
-                            }
-                            renderInput={(params) => (
-                                <TextField
-                                    {...params}
-                                    variant="filled"
-                                    label=""
-                                    placeholder="Skills"
-                                />
-                            )}
-                            sx={{ m: 2 }}
-                            // onChange = {e=>handleChange(e.target.value)}
-                            onChange={handleInput}
-                        />
-                        <Button variant="contained" onClick={handleSubmit} endIcon={<SendIcon />} sx={{ m: 2 }}>
-                            Send
-                        </Button>
-                    </div>
+                        <Feature />
+                        <div>
+                            <Autocomplete
+                                multiple
+                                id="tags-filled"
+                                options={topSkills.map((option) => option.title)}
+
+                                freeSolo
+                                renderTags={(value, getTagProps) =>
+                                    value.map((option, index) => (
+                                        <Chip variant="outlined" label={option} {...getTagProps({ index })} />
+                                    ))
+                                }
+                                renderInput={(params) => (
+                                    <TextField
+                                        {...params}
+                                        variant="filled"
+                                        label=""
+                                        placeholder="Skills"
+                                    />
+                                )}
+                                sx={{ m: 2 }}
+                                // onChange = {e=>handleChange(e.target.value)}
+                                onChange={handleInput}
+                            />
+                            <Button color="secondary" variant="contained" onClick={handleSubmit} endIcon={<SendIcon />} sx={{ m: 2 }}>
+                                Send
+                            </Button>
+                        </div>
+                    </Grid>
+
+
+                    <Divider orientation="vertical" flexItem>
+
+                    </Divider>
+                    <Grid item xs={8.9} >
+                        <AppBarTop />
+                        {isData ?
+                            (<ResumeList resumeData={data} />) :
+                            (<EmptyContent />)
+                        }
+                        {/* <ResumeList resumeData={data} /> */}
+
+                    </Grid>
+
                 </Grid>
-
-
-                <Divider orientation="vertical" flexItem>
-
-                </Divider>
-                <Grid item xs={8.9} >
-                    <AppBarTop />
-                    {isData ?
-                        (<ResumeList resumeData={data} />) :
-                        (<EmptyContent />)
-                    }
-                    {/* <ResumeList resumeData={data} /> */}
-
-                </Grid>
-
-            </Grid>
-
+            </ThemeProvider>
         </div>
     )
 }

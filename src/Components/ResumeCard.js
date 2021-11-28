@@ -10,6 +10,25 @@ import { Avatar } from 'antd';
 import { red } from '@mui/material/colors';
 import { deepOrange, deepPurple } from '@mui/material/colors';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#1976d2' // navy blue
+        },
+        secondary: {
+
+            main: "#f17105" // orange -> pumpkin
+        },
+        tertiary: {
+            main: "#e6c229" //yellow -> jonquil
+        },
+        white: {
+            main: "#fff" // white
+        }
+    }
+});
 const AccountStyle = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
@@ -25,18 +44,20 @@ function ResumeCard({ resumeData, ...other }) {
     // }
     return resumeData.map(ele => (
         <div>
+            <ThemeProvider theme={theme}>
             <Box sx={{ m: 2 }}>
-                <Card sx={{ maxWidth: 700, boxShadow: 3, borderRadius: 5, backgroundColor: '#eff0d1' }}>
+                <Card sx={{ maxWidth: 700, boxShadow: 3, borderRadius: 5, backgroundColor: '#fff9ff' }}>
 
                     <CardHeader
                         avatar={
-                            <Avatar sx={{ bgcolor: red }}>{ele.first_name[0]}</Avatar>
+                            <Avatar sx={{ bgcolor: "#fcab10" }}>{ele.first_name[0]}</Avatar>
                         }
                         action={
                             <IconButton aria-label="settings">
                                 <MoreVertIcon />
                             </IconButton>
                         }
+                        
                         title={ele.first_name}
                         subheader="Novemeber 28, 2021"
                     />
@@ -71,16 +92,17 @@ function ResumeCard({ resumeData, ...other }) {
                     </Grid>
 
                     <CardActions>
-                        <Button variant="outlined" startIcon={<EmailIcon />} onClick={()=>window.open(`mailto:${ele.email}?subject=Subject&body=Body%20goes%20here`)}>
+                        <Button color="secondary" variant="outlined" startIcon={<EmailIcon />} onClick={()=>window.open(`mailto:${ele.email}?subject=Subject&body=Body%20goes%20here`)}>
                             Mail
                         </Button>
 
-                        <Button variant="outlined" startIcon={<DownloadIcon />} onClick={() => { window.open('http://127.0.0.1:8000/static/uploads/' + ele.first_name, '_blank'); }} >
+                        <Button color="secondary" variant="outlined" startIcon={<DownloadIcon />} onClick={() => { window.open('http://127.0.0.1:8000/static/uploads/' + ele.first_name, '_blank'); }} >
                             Download
                         </Button>
                     </CardActions>
                 </Card>
             </Box>
+            </ThemeProvider>
         </div>
     ))
 }

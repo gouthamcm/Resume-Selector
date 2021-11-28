@@ -21,17 +21,24 @@ import { Link, NavLink } from 'react-router-dom';
 
 // import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 const theme = createTheme({
     palette: {
         primary: {
-            main: "#e4572e"
+            main: '#1976d2' // navy blue
         },
-        secondary: {
-            main: "#279af1"
-        }
+      secondary: {
+          
+          main: "#f17105" // orange -> pumpkin
+      },
+      tertiary: {
+          main: "#e6c229" //yellow -> jonquil
+      },
+      white: {
+          main: "#fff" // white
+      }
     }
-});
+  });
+
 
 
 function AppBarTopAdminUpload() {
@@ -88,7 +95,7 @@ function AppBarTopAdminUpload() {
         <ThemeProvider theme={theme}>
             <Box sx={{ flexGrow: 1 }}>
 
-                <AppBar position="static" color="primary">
+                <AppBar position="static" >
                     <Toolbar>
                         <Box component="img" src={resume} sx={{ width: 110, height: 60, m: 1 }} style={{cursor: 'pointer'}} >
                         </Box>

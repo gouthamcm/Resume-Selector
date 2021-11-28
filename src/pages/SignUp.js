@@ -11,9 +11,29 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Redirect, useHistory } from 'react-router';
 import AppBarTopUser from '../Layouts/AppBarTopUser';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#1976d2' // navy blue
+        },
+        secondary: {
+
+            main: "#f17105" // orange -> pumpkin
+        },
+        tertiary: {
+            main: "#e6c229" //yellow -> jonquil
+        },
+        white: {
+            main: "#fff" // white
+        }
+    }
+});
+
 function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -27,7 +47,7 @@ function Copyright(props) {
     );
 }
 
-const theme = createTheme();
+// const theme = createTheme();
 
 function SignUp() {
 
@@ -41,20 +61,20 @@ function SignUp() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        
+
         // console.log({
         //     name: data.get('username'),
         //     email: data.get('email'),
         //     password: data.get('password'),
 
         // });
-        
+
         fetch(
             'http://127.0.0.1:8000/auth/users/',
             {
                 method: 'POST',
                 body: data,
-                    
+
             }
         )
             .then((response) => response.json())
@@ -95,6 +115,7 @@ function SignUp() {
                             <Grid container spacing={2}>
                                 <Grid item xs={12} >
                                     <TextField
+                                        color="secondary"
                                         // autoComplete="given-name"
                                         name="username"
                                         required
@@ -107,6 +128,7 @@ function SignUp() {
 
                                 <Grid item xs={12}>
                                     <TextField
+                                        color="secondary"
                                         required
                                         fullWidth
                                         id="email"
@@ -117,6 +139,7 @@ function SignUp() {
                                 </Grid>
                                 <Grid item xs={12}>
                                     <TextField
+                                        color="secondary"
                                         required
                                         fullWidth
                                         name="password"
@@ -134,6 +157,7 @@ function SignUp() {
               </Grid> */}
                             </Grid>
                             <Button
+                                color="secondary"
                                 type="submit"
                                 fullWidth
                                 variant="contained"
@@ -143,7 +167,7 @@ function SignUp() {
                             </Button>
                             <Grid container justifyContent="flex-start">
                                 <Grid item>
-                                    <Link onClick={handleSignin} variant="body2">
+                                    <Link onClick={handleSignin} variant="body2" color="#e6c229">
                                         Already have an account? Sign in
                                     </Link>
                                 </Grid>
