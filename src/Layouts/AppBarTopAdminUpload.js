@@ -15,9 +15,25 @@ import MenuItem from '@mui/material/MenuItem';
 import { Redirect, useHistory } from 'react-router';
 import Menu from '@mui/material/Menu';
 
-import resume from '../Assets/resume.png'
+import resume from '../Assets/resume_logo.png'
 
 import { Link, NavLink } from 'react-router-dom';
+
+// import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: "#e4572e"
+        },
+        secondary: {
+            main: "#279af1"
+        }
+    }
+});
+
+
 function AppBarTopAdminUpload() {
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -28,7 +44,7 @@ function AppBarTopAdminUpload() {
     const handleChange = (event) => {
         setAuth(event.target.checked);
     };
-    const handleWelcome = ()=> {
+    const handleWelcome = () => {
         setNavigateWelcome(true);
     }
     const handleMenu = (event) => {
@@ -42,8 +58,8 @@ function AppBarTopAdminUpload() {
             'http://127.0.0.1:8000/auth/token/logout/',
             {
                 method: 'POST',
-                
-                
+
+
             }
         )
             .then((response) => response.json())
@@ -62,54 +78,55 @@ function AppBarTopAdminUpload() {
         history.push('/recruiter');
     }
 
-    if(navigate){
-        return(<Redirect to='/signin'/>)
+    if (navigate) {
+        return (<Redirect to='/signin' />)
     }
-    if(navigateWelcome){
+    if (navigateWelcome) {
         return (<Redirect to='/welcome' />)
     }
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <ThemeProvider theme={theme}>
+            <Box sx={{ flexGrow: 1 }}>
 
-            <AppBar position="static">
-                <Toolbar>
-                    <Box  component="img" src={resume} sx={{ width: 110, height: 60, m: 1 }}>
-                    </Box>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                <AppBar position="static" color="primary">
+                    <Toolbar>
+                        <Box component="img" src={resume} sx={{ width: 110, height: 60, m: 1 }} style={{cursor: 'pointer'}} >
+                        </Box>
+                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 
-                    </Typography>
-                    <IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        onClick={handleMenu}
-                        color="inherit"
-                        edge="end"
+                        </Typography>
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={handleMenu}
+                            color="inherit"
+                            edge="end"
 
-                    >
-                        <AccountCircle />
-                    </IconButton>
-                    <Menu
-                        id="menu-appbar"
-                        anchorEl={anchorEl}
-                        anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        keepMounted
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        open={Boolean(anchorEl)}
-                        onClose={handleClose}
-                    >
-                        <MenuItem onClick={handleRedirect}>View Resumes</MenuItem>
-                        <MenuItem onClick={handleLogout}>Logout</MenuItem>
-                    </Menu>
+                        >
+                            <AccountCircle />
+                        </IconButton>
+                        <Menu
+                            id="menu-appbar"
+                            anchorEl={anchorEl}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            open={Boolean(anchorEl)}
+                            onClose={handleClose}
+                        >
+                            <MenuItem onClick={handleRedirect}>View Resumes</MenuItem>
+                            <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                        </Menu>
 
-                    {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         News
                     </Typography>
                     <IconButton
@@ -121,13 +138,14 @@ function AppBarTopAdminUpload() {
                     >
                         <MenuIcon />
                     </IconButton> */}
-                    {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        {/* <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         News
                     </Typography>
                     <Button color="inherit">Login</Button> */}
-                </Toolbar>
-            </AppBar>
-        </Box>
+                    </Toolbar>
+                </AppBar>
+            </Box>
+        </ThemeProvider>
     )
 }
 

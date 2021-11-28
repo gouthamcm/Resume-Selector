@@ -13,10 +13,25 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import resume from '../Assets/resume.png'
+import resume from '../Assets/resume_logo.png'
 import { Redirect } from 'react-router';
 
 import { Link, NavLink } from 'react-router-dom';
+
+// import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#e4572e"
+    },
+    secondary: {
+      main: "#279af1"
+    }
+  }
+});
+
 function AppBarTopUser() {
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -39,10 +54,11 @@ function AppBarTopUser() {
         return (<Redirect to='/welcome' />)
     }
     return (
+        <ThemeProvider theme={theme}>
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+            <AppBar position="static" color="primary" >
                 <Toolbar>
-                    <Box onClick={handleWelcome} component="img" src={resume} sx={{ width: 110, height: 60, m: 1 }}>
+                    <Box onClick={handleWelcome} component="img" src={resume} sx={{ width: 110, height: 60, m: 1 }} style={{cursor: 'pointer'}}>
                     </Box>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 
@@ -97,6 +113,7 @@ function AppBarTopUser() {
                 </Toolbar>
             </AppBar>
         </Box>
+        </ThemeProvider>
     )
 }
 

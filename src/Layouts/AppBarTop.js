@@ -17,6 +17,21 @@ import Menu from '@mui/material/Menu';
 import resume from '../Assets/resume.png'
 
 import {Link, NavLink} from 'react-router-dom';
+
+// import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+        main: "#e4572e"
+      },
+      secondary: {
+        main: "#279af1"
+      }
+  }
+});
+
 function AppBarTop() {
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -62,11 +77,12 @@ function AppBarTop() {
         return(<Redirect to='/signin'/>)
     }
     return (
+        <ThemeProvider theme={theme}>
         <Box  sx={{ flexGrow: 1 }}>
             {/* <Box component="img" src={resume} sx={{ width: 110, height: 60, m:1}}>
 
             </Box> */}
-            <AppBar position="static">
+            <AppBar position="static" color="primary" >
                 <Toolbar>
                     
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -122,6 +138,7 @@ function AppBarTop() {
                 </Toolbar>
             </AppBar>
         </Box>
+        </ThemeProvider>
     )
 }
 
