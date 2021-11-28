@@ -1,4 +1,4 @@
-import { Grid, TextField, Box, Container, Paper, Typography, Button, Alert, AlertTitle } from '@mui/material'
+import { Grid, TextField, Box, Container, Paper, Typography, Button, Alert, AlertTitle, CircularProgress } from '@mui/material'
 import Send from '@mui/icons-material/Send';
 import { styled } from '@mui/material/styles';
 import React, { useState } from 'react'
@@ -14,15 +14,21 @@ function AdminUpload() {
     const [isFilePicked, setIsFilePicked] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    // const [email, setEmail] = useState('');
+    const [email, setEmail] = useState('');
     const [phNumber, setPhNumber] = useState('');
-    
+    const [alert, setAlert] = useState(false);
+    const [alertError, setAlertError] = useState(false);
+    const [progress, setProgress] = useState(false);
+
     const changeHandler = (event) => {
         setSelectedFile(event.target.files[0]);
         setIsFilePicked(true);
     };
-    
+
     const handleSubmission = () => {
+        setProgress(true);
+        setAlertError(false);
+        setAlert(false);
         const formData = new FormData();
         formData.append('first_name', firstName + ' ' + lastName);
         // formData.append('last_name', lastName);
@@ -44,23 +50,32 @@ function AdminUpload() {
             .then((response) => response.json())
             .then((result) => {
                 console.log('Success', result);
-                <Alert severity="success">
-                    <AlertTitle>Success</AlertTitle>
-                    Resume uploaded — <strong>You can enter more!</strong>
-                </Alert>
+                setAlert(true);
+
+                setProgress(false);
             })
             .catch((error) => {
                 console.log('Error', error);
+                setAlertError(true);
+                setProgress(false);
                 // console.log("error");
             });
     };
     if (localStorage.getItem('username') == null) {
         return (<Redirect to='/*' />)
     }
-    
+
     return (
         <div>
             <AppBarTopAdmin />
+            {alert ? <Alert severity="success">
+                <AlertTitle>Success</AlertTitle>
+                Resume uploaded — <strong>You can enter more!</strong>
+            </Alert> : <></>}
+            {alertError ? <Alert severity="error">
+                <AlertTitle>Error</AlertTitle>
+                File not Uploaded — <strong>Try again!</strong>
+            </Alert> : <></>}
             <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
                 <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
                     <Typography component="h1" variant="h4" align="center">
@@ -92,7 +107,7 @@ function AdminUpload() {
                                     variant="standard"
                                 />
                             </Grid>
-                            {/* <Grid item xs={12}>
+                            <Grid item xs={12}>
                                 <TextField
                                     required
                                     id="email"
@@ -102,8 +117,8 @@ function AdminUpload() {
                                     onInput={e=> setEmail(e.target.value)}
                                     variant="standard"
                                 />
-                            </Grid> */}
-                            <Grid item xs={12}>
+                            </Grid>
+                            {/* <Grid item xs={12}>
                                 <TextField
 
                                     id="phone"
@@ -114,7 +129,7 @@ function AdminUpload() {
                                     onInput={e => setPhNumber(e.target.value)}
                                     variant="standard"
                                 />
-                            </Grid>
+                            </Grid> */}
                             <Grid item xs={12} sm={4}>
                                 <label htmlFor="contained-button-file">
                                     <Input type="file" name="file" id="contained-button-file" multiple onChange={changeHandler} />
@@ -130,11 +145,14 @@ function AdminUpload() {
                                         <p>please select a file</p>
                                     )}
                                 </label>
+                                {progress ? <CircularProgress color="secondary" /> : <></>}
+
                             </Grid>
                             <Grid item xs={12}>
                                 <Button variant="contained" onClick={handleSubmission} endIcon={<Send />}>
                                     Send
                                 </Button>
+
                             </Grid>
                         </Grid>
                     </Box>

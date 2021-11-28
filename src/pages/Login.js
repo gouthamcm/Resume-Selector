@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useHistory, Redirect } from 'react-router';
 import AppBarTopUser from '../Layouts/AppBarTopUser';
+
 function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -74,7 +75,7 @@ export default function Login() {
     };
 
     if (redirect) {
-        return (<Redirect to='/admin' />);
+        return (<Redirect to='/recruiter' />);
     }
     return (
         <div>
@@ -119,6 +120,7 @@ export default function Login() {
                             />
 
                             <Button
+                                
                                 type="submit"
                                 fullWidth
                                 variant="contained"

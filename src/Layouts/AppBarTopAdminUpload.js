@@ -59,7 +59,7 @@ function AppBarTopAdminUpload() {
     };
     const handleRedirect = () => {
         // setNavigate(true);
-        history.push('/admin');
+        history.push('/recruiter');
     }
 
     if(navigate){

@@ -1,85 +1,61 @@
-(XXX)-XXX-XXXX J O h n S Now linkedin.com/in/yourlink
+GOUTHAM PARAMESWARAN CM
+
+22, Amber-B NIT Trichy, Tiruchirappalli 620015
+(+91)8056167057 © goutham.898Q@gmail.com
 
  
 
- 
-
- 
-
-youremail@email.com Target Job Portfolio
-+ Keyword 1 + Keyword 2 + Keyword 3 + Keyword 4
-Impact: A funded research proposals, B technical reports, & C scientific publications with X+ downloads & Y+ citations, Z awards
 EDUCATION
-Master of Science, Microbiology, University of the North, GPA: x.xx/4.00 Mon yyyy — Mon yyyy
-Bachelor of Science, Electrical Engineering, University of Westeros, GPA: x.xx/10.00 Mon yyyy — Mon yyyy
+National Institute of Technology, Tiruchirappalli July 2017 - Present
+Bachelor of Technology. GPA: 8.18
+
+Department of Instrumentation and Control Engineering
+
+Kendriya Vidyayala Anna Nagar, Chennai April 2015 - April 2016
+
++2, Science. Overall Percentage: 94.2
+
+Kendriya Vidyayala Anna Nagar, Chennai April 2013 - April 2014
+
+10th Class. Overall Percentage: 95.0
+SUMMARY
+
+ 
+
+Result-driven student from NIT Trichy passionate about competitive programming and app develop-
+ment having a track record of success in creating commercially viable apps. Good problem-solving skills
+and ability to perform well in a team and highly motivated to explore new skills.
+
 PROJECTS
-Role 1, Department Name Mon yyyy — Mon yyyy
 
-+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit scelerisque urna, id facilisis metus vestibulum at. In nec
-sapien dignissim, ultricies dolor accumsan, malesuada augue
-
-+ Aenean nec dui et felis mattis suscipit ut sed tortor. Sed nec viverra nulla. Mauris in dapibus quam.Aenean ut ligula sed orci
-interdum scelerisque. Cras eget odio mattis, accumsan arcu ac, interdum enim. Quisque et pharetra sem, in euismod leo
-
-Role 2, Department Name Mon yyyy — Mon yyyy
-
-+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit scelerisque urna, id facilisis metus vestibulum at. In nec
-sapien dignissim, ultricies dolor accumsan, malesuada augue
-
-+ Aenean nec dui et felis mattis suscipit ut sed tortor. Sed nec viverra nulla. Mauris in dapibus quam.Aenean ut ligula sed orci
-interdum scelerisque. Cras eget odio mattis, accumsan arcu ac, interdum enim. Quisque et pharetra sem, in euismod leo
-
-Role 3, Department Name Mon yyyy — Mon yyyy
-
-+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit scelerisque urna, id facilisis metus vestibulum at. In nec
-sapien dignissim, ultricies dolor accumsan, malesuada augue
-
-+ Aenean nec dui et felis mattis suscipit ut sed tortor. Sed nec viverra nulla. Mauris in dapibus quam.Aenean ut ligula sed orci
-interdum scelerisque. Cras eget odio mattis, accumsan arcu ac, interdum enim. Quisque et pharetra sem, in euismod leo
+Dog breed Classifier
+This project uses Convolutional Neural Network(CNN) to classify different dogs into their respective
+breed. The model has been trained for over 21000 dog images and has achieved an accuracy of 85.%.
 
  
 
-EXPERIENCE
-XXX Scientist (Intern) Mon yyyy — Mon yyyy
-Add Company Name Here Location
+TV Scripts Generation
 
-+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet justo porta magna ultrices ultricies. Nam sem augue,
-lobortis sit amet venenatis sed, rutrum vel dui. Fusce mauris libero, ultrices quis convallis venenatis, malesuada at neque. Vivamus
-facilisis metus enim, convallis egestas dui dictum vel. Integer lacus nisl, molestie vitae bibendum eget, finibus vitae ligula.
+This project generates TV Script using Recurrent Neural Networks (RNNs). The model has been
+trained on the Seinfeld data set of scripts from 9 seasons and thus generates a fake TV script based on
+the learning.
 
-+ Duis fermentum arcu vitae faucibus cursus. Praesent aliquet id risus dictum lobortis. Donec varius tincidunt aliquet.Nulla congue
-nulla sed accumsan consequat. Pellentesque facilisis cursus faucibus.
+Face Generation
 
-YYY Engineer (Intern) Mon yyyy — Mon yyyy
-Add Company Name Here Location
-+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet justo porta magna ultrices ultricies. Nam sem augue,
+This project uses Deep Convolutional Generative Adversarial Network (DCGAN) to generate images
+of new and realistic human faces. The model has been trained on the CelebA dataset and has achieved
+an accuracy of 70%.
 
-lobortis sit amet venenatis sed, rutrum vel dui. Fusce mauris libero, ultrices quis convallis venenatis, malesuada at neque.
-* Duis fermentum arcu vitae faucibus cursus. Praesent aliquet id risus dictum lobortis. Donec varius tincidunt aliquet.
+Orientation App 2019
+This application is a non-profit student initiative aimed at guiding all first-year B-tech students to
+follow the current events and explore the campus of NIT Trichy.
 
- 
+NITT App 2019
 
-SKILLS
+This is an application built specifically to fulfil the needs of every student and faculty members of NIT
+Trichy by providing a platform for announcements, filing complaints and mess registration on their
+mobile phones.
 
-Physics A,B, C, D, E, F
-Management G,H, 1, J, K,L, M
-Programming N,0,P,Q,R,S,T
-
-PUBLICATIONS
-
- 
-
-1. Snow, J. Putting This Here Because | Published Something. /n Some Journal (2002).
-
-2. Doe, J. etal. Putting This Here Because | Published Something. /n Some Journal (1996).
-
-3. Doe, J. etal. Putting This Here Because | Published Something. /n a Super Bigggggg Journal (1984).
-
-4. Doe, J., Doe, J. & Snow, J. Putting This Here Because | Published Something. /n a Super Bigggggg Journal (1956).
-
-AWARDS & HONORS
-
- 
-
-yyyy Award 1 ( $xxxxxx ); Award 2 ( $xxxxxx ); Award 3 ( $xxxxxx ); Award 4 ( $xxxxxx ); Award 5 ( $xxxxxx )
-yyyy Award 6 ( $xxxxxx ); Award 7 ( $xxxxxx ); Award 8 ( $xxxxxx )
+SportsFete App 2018
+This is the official app for Sports-fest 2018 of NIT-Trichy, which provides a list of all the live, future
+and past events happening during the fest. Using this application, the user can check the scores of

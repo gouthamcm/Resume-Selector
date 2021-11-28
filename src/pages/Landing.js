@@ -94,7 +94,7 @@ function Landing() {
               <ComputerIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Admin
+              Recruiter
             </Typography>
             <Box sx={{ mt: 1, width:'100%' }}>
               
@@ -104,7 +104,7 @@ function Landing() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Admin? Log in please
+                Recruiter? Log in please
               </Button>
               
             </Box>

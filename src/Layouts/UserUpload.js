@@ -15,6 +15,9 @@ function UserUpload() {
     const [phNumber, setPhNumber] = useState('');
     const [loading, setLoading] = React.useState(false);
     const [query, setQuery] = React.useState('idle');
+    const [alert, setAlert] = useState(false);
+    const [alertError, setAlertError] = useState(false);
+    const [progress, setProgress] = useState(false);
     const timerRef = React.useRef();
 
     React.useEffect(
@@ -50,7 +53,9 @@ function UserUpload() {
         // setIsFilePicked(false);
         // window.location.reload();
 
-
+        setProgress(true);
+        setAlertError(false);
+        setAlert(false);
 
         // timerRef.current = window.setTimeout(() => {
         //     setQuery('success');
@@ -77,19 +82,28 @@ function UserUpload() {
             .then((response) => response.json())
             .then((result) => {
                 console.log('Success', result);
-                <Alert severity="success">
-                    <AlertTitle>Success</AlertTitle>
-                    Resume uploaded — <strong>You can enter more!</strong>
-                </Alert>
+                setAlert(true);
+
+                setProgress(false);
             })
             .catch((error) => {
                 console.log('Error', error);
+                setAlertError(true);
+                setProgress(false);
                 // console.log("error");
             });
     };
 
     return (
         <div>
+            {alert ? <Alert severity="success">
+                <AlertTitle>Success</AlertTitle>
+                Resume uploaded — <strong>You can enter more!</strong>
+            </Alert> : <></>}
+            {alertError ? <Alert severity="error">
+                <AlertTitle>Error</AlertTitle>
+                File not Uploaded — <strong>Try again!</strong>
+            </Alert> : <></>}
             <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
                 <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
                     <Typography component="h1" variant="h4" align="center">
@@ -132,7 +146,7 @@ function UserUpload() {
                                     variant="standard"
                                 />
                             </Grid>
-                            <Grid item xs={12}>
+                            {/* <Grid item xs={12}>
                                 <TextField
                                     required
                                     id="phone"
@@ -143,7 +157,7 @@ function UserUpload() {
                                     onInput={e => setPhNumber(e.target.value)}
                                     variant="standard"
                                 />
-                            </Grid>
+                            </Grid> */}
                             <Grid item xs={12} sm={4}>
                                 <label htmlFor="contained-button-file">
                                     <Input type="file" name="file" id="contained-button-file" multiple onChange={changeHandler} />
@@ -159,23 +173,10 @@ function UserUpload() {
                                         <p>please select a file</p>
                                     )}
                                 </label>
+                                {progress ? <CircularProgress color="secondary" /> : <></>}
                             </Grid>
                             <Grid item xs={12}>
-                                <Box sx={{ height: 40 }}>
-                                    {query === 'success' ? (
-                                        <Typography>Success!</Typography>
-                                    ) : (
-                                        <Fade
-                                            in={query === 'progress'}
-                                            style={{
-                                                transitionDelay: query === 'progress' ? '800ms' : '0ms',
-                                            }}
-                                            unmountOnExit
-                                        >
-                                            <CircularProgress />
-                                        </Fade>
-                                    )}
-                                </Box>
+                                
                                 <Button variant="contained" onClick={handleSubmission} endIcon={<Send />}>
                                     Send
                                 </Button>

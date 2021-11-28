@@ -26,7 +26,7 @@ function ResumeCard({ resumeData, ...other }) {
     return resumeData.map(ele => (
         <div>
             <Box sx={{ m: 2 }}>
-                <Card sx={{ maxWidth: 700, boxShadow: 3, borderRadius: 5, backgroundColor: '#fff9c4' }}>
+                <Card sx={{ maxWidth: 700, boxShadow: 3, borderRadius: 5, backgroundColor: '#eff0d1' }}>
 
                     <CardHeader
                         avatar={
@@ -71,7 +71,7 @@ function ResumeCard({ resumeData, ...other }) {
                     </Grid>
 
                     <CardActions>
-                        <Button variant="outlined" startIcon={<EmailIcon />}>
+                        <Button variant="outlined" startIcon={<EmailIcon />} onClick={()=>window.open(`mailto:${ele.email}?subject=Subject&body=Body%20goes%20here`)}>
                             Mail
                         </Button>
 

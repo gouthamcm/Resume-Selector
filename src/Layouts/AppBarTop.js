@@ -56,7 +56,7 @@ function AppBarTop() {
     };
     const handleRedirect=()=>{
         // setNavigate(true);
-        history.push('/admin/upload');
+        history.push('/recruiter/upload');
     }
     if(navigate){
         return(<Redirect to='/signin'/>)
