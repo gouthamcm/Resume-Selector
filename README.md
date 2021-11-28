@@ -1,5 +1,20 @@
 # RESUME SELECTOR
 
+## Team Name 
+`SANGZ`
+
+## Team Memebers:
+
+- ZIYAD NASEEM
+
+- NITIN KUMAR
+
+- ABHISHEK BISHT
+
+- SARTHAK VERMA
+
+- GOUTHAM PARAMESWARAN C M
+
 ## FRONTEND 
 
 ### Installation 
