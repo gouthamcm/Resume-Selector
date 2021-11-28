@@ -3,7 +3,7 @@
 ## Team Name 
 `SANGZ`
 
-## Team Memebers:
+## Team Members
 
 - ZIYAD NASEEM
 
@@ -14,6 +14,15 @@
 - SARTHAK VERMA
 
 - GOUTHAM PARAMESWARAN C M
+
+## PRE-REQUISITE
+
+- `node`
+- `python 3.8`
+- `django`
+- `postgreSQL`
+
+After postgreSQL is installed and setup, the username, password and database name need to be updated in `resume_selector/settings.py`. The DATABASES variable will need to be updated, along with the ALLOWED_HOSTS variable.
 
 ## FRONTEND 
 
@@ -33,6 +42,7 @@ Runs the app in the development mode.\
 Open [http://localhost:3000/welcome](http://localhost:3000/welcome) to view it in the browser.
 
 ## BACKEND
+
 
 ### Table creation
 
